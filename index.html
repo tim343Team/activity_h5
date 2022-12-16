@@ -24,8 +24,20 @@
             font-size: 0;
             height: 100vh;
             width:100vw;
+            position: relative;
             overflow-y: hidden;
             overflow-x: auto;
+        }
+        .m-img-box{
+            z-index: 999;
+            position: fixed;
+            top:0;
+            width: 100%;
+            height: 10vh;
+            text-align: center;
+        }
+        .m-img-box-item{
+            height: 100%;
         }
         .img{
             height: 100%;
@@ -79,6 +91,22 @@
     </style>
 </head>
 <body>
+<div class="m-img-box">
+    <img class="m-img-box-item" data-src="assets/m/mh1-1.png" id="mh1"/>
+    <img class="m-img-box-item" data-src="assets/m/mh1.png" id="mh1-1" style="display: none"/>
+    <img class="m-img-box-item" data-src="assets/m/mp1-1.png" id="mp1"/>
+    <img class="m-img-box-item" data-src="assets/m/mp1.png" id="mp1-1" style="display: none"/>
+    <img class="m-img-box-item" data-src="assets/m/mp2-1.png" id="mp2"/>
+    <img class="m-img-box-item" data-src="assets/m/mp2.png" id="mp2-1" style="display: none"/>
+    <img class="m-img-box-item" data-src="assets/m/mp3-1.png" id="mp3"/>
+    <img class="m-img-box-item" data-src="assets/m/mp3.png" id="mp3-1" style="display: none"/>
+    <img class="m-img-box-item" data-src="assets/m/mp4-1.png" id="mp4"/>
+    <img class="m-img-box-item" data-src="assets/m/mp4.png" id="mp4-1" style="display: none"/>
+    <img class="m-img-box-item" data-src="assets/m/mp5-1.png" id="mp5"/>
+    <img class="m-img-box-item" data-src="assets/m/mp5.png" id="mp5-1" style="display: none"/>
+    <img class="m-img-box-item" data-src="assets/m/mp6-1.png" id="mp6"/>
+    <img class="m-img-box-item" data-src="assets/m/mp6.png" id="mp6-1" style="display: none"/>
+</div>
 <div class="loading" id="loading">
     <div class="relative boxItem">
         <img id="cloud" class="img img-max" src="./assets/home-3.jpg">
@@ -97,7 +125,7 @@
     </div>
 
 </div>
-<div class="box" id="box">
+<div class="box " id="box">
     <div class="relative boxItem">
         <img class="img"  data-src="./assets/p1.jpg">
         <img class="img img-absolute" data-src="./assets/p1.gif">
@@ -151,7 +179,23 @@
     let home=document.getElementById('home');
     let homeR=document.getElementById('homeR');
     let cloud = document.getElementById('cloud')
-    let winWidth= window.screen.availWidth;
+
+    let mh1 = document.getElementById('mh1')
+    let mp1 = document.getElementById('mp1')
+    let mp2 = document.getElementById('mp2')
+    let mp3 = document.getElementById('mp3')
+    let mp4 = document.getElementById('mp4')
+    let mp5 = document.getElementById('mp5')
+    let mp6 = document.getElementById('mp6')
+
+    let mh11 = document.getElementById('mh1-1')
+    let mp11 = document.getElementById('mp1-1')
+    let mp22 = document.getElementById('mp2-1')
+    let mp33 = document.getElementById('mp3-1')
+    let mp44 = document.getElementById('mp4-1')
+    let mp55 = document.getElementById('mp5-1')
+    let mp66 = document.getElementById('mp6-1')
+    // let winWidth= window.screen.availWidth;
     let count = 0;
     let H1= document.getElementById('home-1')
     // let H2= document.getElementById('home-2')
@@ -212,25 +256,30 @@
         if(count===(imgs.length+audios.length)){
             loading.setAttribute('style','display:none');
             box.setAttribute('style','display:block');
+            show(mh1,mh11);
             H1.pause();
             P11.play();
         }else{
             alert('我还在加载')
         }
     })
+    let show=(a,b)=>{
+        a.setAttribute('style','display:none'); b.setAttribute('style','display:inline-block');
+    }
     box.addEventListener('scroll',(e)=>{
         let totalWidth=box.scrollWidth;
         let bl=Math.floor((box.scrollLeft/totalWidth)*100)
         console.log(bl);
         switch (bl){
-            case 2:P11.play();P12.pause();break;
+            case 2:P11.play();P12.pause(); break;
             case 8:P11.pause();P12.play();P13.pause();break;
-            case 13:P12.pause();P13.play();P21.pause();break;
-            case 31:P13.pause();P21.play();P22.pause();break;
-            case 46:P21.pause();P22.play();P31.pause();break;
-            case 57:P22.pause();P31.play();P41.pause();break;
+            case 13:P12.pause();P13.play();P21.pause(); show(mp1,mp11);break;
+            case 31:P13.pause();P21.play();P22.pause();show(mp2,mp22);break;
+            case 43:P21.pause();P22.play();P31.pause();show(mp3,mp33);break;
+            case 57:P22.pause();P31.play();P41.pause();show(mp4,mp44);break;
+            case 70:show(mp5,mp55);break;
             case 83:P31.pause();P41.play();P42.pause();break;
-            case 88:P41.pause();P42.play();break;
+            case 88:P41.pause();P42.play();show(mp6,mp66);break;
         }
         if(box.clientWidth+box.scrollLeft+10>=box.scrollWidth){
             // alert('到底了')
