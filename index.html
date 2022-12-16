@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo</title>
+    <style>
+        html,body,*{
+            margin: 0;
+            padding: 0;
+            border: 0;
+            overflow-y: hidden;
+        }
+        .box {
+            box-sizing: border-box;
+            white-space: nowrap;
+            /* 隐藏滚动条 */
+            scrollbar-width: none; /* firefox */
+            -ms-overflow-style: none; /* IE 10+ */
+        }
+        .box::-webkit-scrollbar {
+            display: none; /* Chrome Safari */
+        }
+        .box{
+            font-size: 0;
+            height: 100vh;
+            width:100vw;
+            overflow-y: hidden;
+            overflow-x: auto;
+        }
+        .img{
+            height: 100%;
+        }
+        .boxItem{
+            height:100vh;
+            display: inline-block;
+            outline: none;
+        }
+        .relative{
+            position:relative;
+        }
+        .img-absolute{
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .loading{
+            height:100vh;
+            width:100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .width100{
+            width:100%;
+        }
+        .img-max{
+            width: 100%;
+            object-fit: cover;
+        }
+        .point{
+            position: absolute;
+            width: 180px;
+            height: 280px;
+            /*background: red;*/
+            display: inline-block;
+        }
+        .t1{
+            left: 27.1%;
+            top: 20.8%;
+        }
+        .t2{
+            right: 19.5%;
+            top: 41.5%;
+        }
+        .t3{
+            left: 12%;
+            bottom:22%;
+        }
+    </style>
+</head>
+<body>
+<div class="loading" id="loading">
+    <div class="relative boxItem">
+        <img id="cloud" class="img img-max" src="./assets/home-3.jpg">
+        <img id="home"  class="img img-max" style="display: none" data-src="./assets/home.jpg">
+        <img id="homeR"  class="img-absolute width100" style="display: none" src="./assets/home-r.gif">
+        <img id="open" style="display: none" class="img img-absolute width100" data-src="./assets/home.gif">
+        <div id="progress" class="img-absolute">
+            加载中
+        </div>
+        <div class="point t1" id="goHome" style="display:none;">
+            <img src="" class="width100"/>
+        </div>
+        <div class="point t2" id="goNext" style="display:none;">
+            <img src="" class="width100"/>
+        </div>
+    </div>
+
+</div>
+<div class="box" id="box">
+    <div class="relative boxItem">
+        <img class="img"  data-src="./assets/p1.jpg">
+        <img class="img img-absolute" data-src="./assets/p1.gif">
+        <div class="point t3" id="goBaiDu"></div>
+    </div>
+    <div class="relative boxItem">
+        <img class="img"  data-src="./assets/p2.jpg">
+        <img class="img img-absolute" data-src="./assets/p2.gif">
+    </div>
+    <div class="relative boxItem">
+        <img class="img"  data-src="./assets/p3.jpg">
+        <img class="img img-absolute" data-src="./assets/p3.gif">
+    </div>
+    <div class="relative boxItem">
+        <img class="img" data-src="./assets/p4.jpg">
+        <img class="img img-absolute" data-src="./assets/p4.gif">
+    </div>
+    <audio autoplay="autoplay" data-src="./assets/mp3/home-2.mp3" class="mp3" id="home-1" loop></audio>
+<!--    <audio src="./assets/mp3/home-2.mp3"  data-src="./assets/mp3/home-2.mp3" class="mp3" id="home-2"></audio>-->
+    <audio data-src="./assets/mp3/p1-1.mp3" class="mp3" id="p1-1" loop></audio>
+    <audio data-src="./assets/mp3/p1-2.mp3" class="mp3" id="p1-2" loop></audio>
+    <audio data-src="./assets/mp3/p1-3.mp3" class="mp3" id="p1-3" loop></audio>
+<!--    <audio data-src="./assets/mp3/p1-4.WAV" class="mp3" id="p1-4"></audio>-->
+<!--    <audio data-src="./assets/mp3/p1-5.mp3" class="mp3" id="p1-5"></audio>-->
+    <audio data-src="./assets/mp3/p2-1.mp3" class="mp3" id="p2-1" loop></audio>
+    <audio data-src="./assets/mp3/p2-2.mp3" class="mp3" id="p2-2" loop></audio>
+<!--    <audio data-src="./assets/mp3/p2-3.mp3" class="mp3" id="p2-3"></audio>-->
+<!--    <audio data-src="./assets/mp3/p2-4.mp3" class="mp3" id="p2-4"></audio>-->
+<!--    <audio data-src="./assets/mp3/p2-5.mp3" class="mp3" id="p2-5"></audio>-->
+    <audio data-src="./assets/mp3/p3-1.mp3" class="mp3" id="p3-1" loop></audio>
+<!--    <audio data-src="./assets/mp3/p3-2.mp3" class="mp3" id="p3-2"></audio>-->
+<!--    <audio data-src="./assets/mp3/p3-3.mp3" class="mp3" id="p3-3"></audio>-->
+<!--    <audio data-src="./assets/mp3/p3-4.mp3" class="mp3" id="p3-4"></audio>-->
+    <audio data-src="./assets/mp3/p4-1.mp3" class="mp3" id="p4-1"></audio>
+    <audio data-src="./assets/mp3/p4-2.mp3" class="mp3" id="p4-2" loop></audio>
+</div>
+</body>
+<script>
+    let urls=['http://117.71.58.151:10086/home','https://www.baidu.com'];
+    let URL= window.URL||window.webkitURL;
+    let imgs = [...document.getElementsByTagName('img')].filter(item=>item.hasAttribute('data-src'));
+    let audios = [...document.getElementsByTagName('audio')].filter(item=>item.hasAttribute('data-src'));
+    let loading=document.getElementById('loading');
+    // let points=[...document.getElementsByClassName('point')];
+    let progress=document.getElementById('progress')
+    let box=document.getElementById('box');
+    let open = document.getElementById('open');
+    let goNext = document.getElementById('goNext');
+    let goHome = document.getElementById('goHome');
+    let goBaiDu = document.getElementById('goBaiDu');
+    let home=document.getElementById('home');
+    let homeR=document.getElementById('homeR');
+    let cloud = document.getElementById('cloud')
+    let winWidth= window.screen.availWidth;
+    let count = 0;
+    let H1= document.getElementById('home-1')
+    // let H2= document.getElementById('home-2')
+    let P11= document.getElementById('p1-1')
+    let P12= document.getElementById('p1-2')
+    let P13= document.getElementById('p1-3')
+    // let P14= document.getElementById('p1-4')
+    // let P15= document.getElementById('p1-5')
+    let P21= document.getElementById('p2-1')
+    let P22= document.getElementById('p2-2')
+    // let P23= document.getElementById('p2-3')
+    // let P24= document.getElementById('p2-4')
+    // let P25= document.getElementById('p2-5')
+    let P31= document.getElementById('p3-1')
+    // let P32= document.getElementById('p3-2')
+    // let P33= document.getElementById('p3-3')
+    // let P34= document.getElementById('p3-4')
+    let P41= document.getElementById('p4-1')
+    let P42= document.getElementById('p4-2')
+    function checkCount(){
+        progress.innerText='正在加载!!!!'+count+'/'+(imgs.length+audios.length)
+        if(count===(imgs.length+audios.length)){
+            // setTimeout(()=>{
+            //     loading.setAttribute('style','display:none');
+            //     box.setAttribute('style','display:block');
+            //     // H2.pause();
+            //     P11.play();
+            //     },1800)
+            // H1.play();
+            // H2.play();
+            progress.innerText='';
+            open.setAttribute('style','display:inline-block')
+            // goNext.setAttribute('style','display:inline-block')
+            home.setAttribute('style','display:inline-block')
+            // points.setAttribute('style','display:inline-block')
+            homeR.setAttribute('style','display:inline-block')
+            cloud.setAttribute('style','display:none')
+            setTimeout(()=>{
+                goNext.setAttribute('style','display:inline-block')
+                goHome.setAttribute('style','display:inline-block')
+                open.setAttribute('style','display:none')
+            },3000)
+            // for(let i=0;i<imgs.length;i++){
+            //     let src=imgs[i].getAttribute('data-src');
+            //     imgs[i].setAttribute('src',src);
+            // }
+            // for(let i=0;i<audios.length;i++){
+            //     let src=audios[i].getAttribute('data-src');
+            //     audios[i].setAttribute('src',src);
+            // }
+        }else{
+            loading.setAttribute('style','display:flex');
+            box.setAttribute('style','display:none');
+            open.setAttribute('style','display:none');
+        }
+    }
+    goNext.addEventListener('mouseup',(e)=>{
+        if(count===(imgs.length+audios.length)){
+            loading.setAttribute('style','display:none');
+            box.setAttribute('style','display:block');
+            H1.pause();
+            P11.play();
+        }else{
+            alert('我还在加载')
+        }
+    })
+    box.addEventListener('scroll',(e)=>{
+        let totalWidth=box.scrollWidth;
+        let bl=Math.floor((box.scrollLeft/totalWidth)*100)
+        console.log(bl);
+        switch (bl){
+            case 2:P11.play();P12.pause();break;
+            case 8:P11.pause();P12.play();P13.pause();break;
+            case 13:P12.pause();P13.play();P21.pause();break;
+            case 31:P13.pause();P21.play();P22.pause();break;
+            case 46:P21.pause();P22.play();P31.pause();break;
+            case 57:P22.pause();P31.play();P41.pause();break;
+            case 83:P31.pause();P41.play();P42.pause();break;
+            case 88:P41.pause();P42.play();break;
+        }
+        if(box.clientWidth+box.scrollLeft+10>=box.scrollWidth){
+            // alert('到底了')
+        }
+    })
+    box.addEventListener('mousewheel',(e)=>{
+        console.log(e)
+        requestAnimationFrame(()=>{
+            let x=-e.wheelDelta||e.delayY/10;
+            box.scrollLeft += x;
+        })
+        e.preventDefault();
+    });
+    goHome.addEventListener('mouseup',()=>{
+        window.location.href=urls[0];
+    })
+    goBaiDu.addEventListener('mouseup',()=>{
+        window.location.href=urls[1];
+    })
+    //图片
+    for(let i=0;i<imgs.length;i++){
+        let src=imgs[i].getAttribute('data-src');
+        let ajax= new XMLHttpRequest();
+        ajax.open('get',src);
+        ajax.responseType='blob';
+        ajax.send()
+        ajax.onload=()=>{
+            // if(ajax.readyState===4){
+                console.log('完成')
+                count++;
+                imgs[i].src= URL.createObjectURL(ajax.response);
+                checkCount()
+            // }
+        }
+    }
+    //图片
+    for(let i=0;i<audios.length;i++){
+        let src=audios[i].getAttribute('data-src');
+        let ajax= new XMLHttpRequest();
+        ajax.open('get',src);
+        ajax.responseType='blob';
+        ajax.onload=()=>{
+                // if(ajax.readyState===4){
+                    console.log('完成')
+                    count++;
+                    audios[i].src=URL.createObjectURL(ajax.response);
+                    checkCount()
+                // }
+        }
+        // ajax.onreadystatechange=()=>{
+        //     if(ajax.readyState===4){
+        //         console.log('完成')
+        //         count++;
+        //         checkCount()
+        //     }
+        // }
+        ajax.send()
+    }
+</script>
+</html>
