@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport"
+          content="user-scalable=no">
     <title>demo</title>
     <style>
         html,body,*{
@@ -10,6 +12,132 @@
             border: 0;
             overflow-y: hidden;
         }
+        .rotate90{
+            transform: rotate(90deg);
+            transform-origin: 490px;
+        }
+        #isRotate{
+            transition: all 0.5s;
+            position: absolute;
+            left: 0;
+            top:0;
+            width: 100vw;
+            height: 100vh;
+        }
+        @media screen and (orientation: portrait) {
+            #isRotate{
+                width: 100vh;
+                height: 100vw;
+            }
+
+            .box {
+                box-sizing: border-box;
+                white-space: nowrap;
+                /* 隐藏滚动条 */
+                scrollbar-width: none; /* firefox */
+                -ms-overflow-style: none; /* IE 10+ */
+            }
+            .box::-webkit-scrollbar {
+                display: none; /* Chrome Safari */
+            }
+            .box{
+                font-size: 0;
+                height: 100vw;
+                width:100vh;
+                position: relative;
+                overflow-y: hidden;
+                overflow-x: auto;
+            }
+            .m-img-box{
+                z-index: 999;
+                position: fixed;
+                top:0;
+                width: 100vh;
+                height: 10vw;
+                text-align: center;
+            }
+            .m-img-box-item{
+                height: 100%;
+            }
+            .img{
+                height: 100vw;
+            }
+            .boxItem{
+                height:100vw;
+                display: inline-block;
+                outline: none;
+            }
+            .relative{
+                position:relative;
+            }
+            .img-absolute{
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+            .loading{
+                height:100vw;
+                width:100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .width100{
+                width:100%;
+            }
+            .img-max{
+                width: 100%;
+                object-fit: cover;
+            }
+            .point{
+                position: absolute;
+                width: 250px;
+                height: 320px;
+                /*background: red;*/
+                display: inline-block;
+            }
+            .t1{
+                left: 27.1%;
+                top: 20.8%;
+            }
+            .t2{
+                right: 19.5%;
+                top: 41.5%;
+            }
+            .t3{
+                left: 12%;
+                bottom:22%;
+            }
+            .t4{
+                left: 52%;
+                bottom:20%;
+            }
+            .t5{
+                left: 22%;
+                top: 21%;
+            }
+            .t6{
+                left: 65%;
+                top: 33%;
+
+            }
+            .t7{
+                left: 33%;
+                top: 44%;
+            }
+            .t8{
+                left: 56%;
+                top:20%
+            }
+            .t9{
+                left: 53%;
+                bottom: 17%;
+            }
+            .notice>span{
+                font-size: 5rem;
+            }
+        }
+        @media screen and (orientation: landscape) {
         .box {
             box-sizing: border-box;
             white-space: nowrap;
@@ -112,20 +240,9 @@
             left: 50%;
             top:30%;
         }
-        .hide{
-            display: none;
-        }
-        .notice{
-            width: 100vw;
-            height: 100vh;
-            overflow: hidden;
-            font-size: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
         .notice>span{
             font-size: 5rem;
+        }
         }
     </style>
 </head>
@@ -209,15 +326,11 @@
         <audio data-src="./assets/mp3/p4-2.mp3" class="mp3" id="p4-2" loop></audio>
     </div>
 </div>
-<div id="isNotice" class="hide">
-    <div class="notice">
-        <span>请横屏观看</span>
-    </div>
-</div>
 </body>
 <script>
+
     let isRotate = document.getElementById('isRotate');
-    let isNotice = document.getElementById('isNotice');
+    // let isNotice = document.getElementById('isNotice');
     window.addEventListener('resize',(e)=>{
         checkRotate();
     })
@@ -228,11 +341,11 @@
         let screenWidth = document.documentElement.clientWidth;
         let screenHeight = document.documentElement.clientHeight;
         if(screenHeight>screenWidth){
-            isRotate.setAttribute('class','hide')
-            isNotice.setAttribute('class','')
+            isRotate.setAttribute('class','rotate90')
+            // isNotice.setAttribute('class','')
         }else{
             isRotate.setAttribute('class','');
-            isNotice.setAttribute('class','hide')
+            // isNotice.setAttribute('class','hide')
         }
     }
 
@@ -323,6 +436,15 @@
             open.setAttribute('style','display:none');
         }
     }
+    document.addEventListener('WeixinJSBridgeReady',()=>{
+        H1.play();
+    })
+    document.addEventListener('YixinJSBridgeReady',()=>{
+        H1.play();
+    })
+    loading.addEventListener('touchstart',()=>{
+        H1.play();
+    })
     // 首页跳转
     goNext.addEventListener('mouseup',(e)=>{
         if(count===(imgs.length+audios.length)){
@@ -370,28 +492,28 @@
 
     //跳转
     goHome.addEventListener('mouseup',()=>{
-        window.location.href=urls[0];
+        window.open(urls[0]);
     })
     goBaiDu.addEventListener('mouseup',()=>{
-        window.location.href=urls[0];
+        window.open(urls[0]);
     })
     goSchool.addEventListener('mouseup',()=>{
-        window.location.href=urls[1];
+        window.open(urls[1]);
     })
     goPort.addEventListener('mouseup',()=>{
-        window.location.href=urls[2];
+        window.open(urls[2]);
     })
     goAchievements.addEventListener('mouseup',()=>{
-        window.location.href=urls[3];
+        window.open(urls[3]);
     })
     goMatch.addEventListener('mouseup',()=>{
-        window.location.href=urls[4];
+        window.open(urls[4]);
     })
     goPersonnel.addEventListener('mouseup',()=>{
-        window.location.href=urls[5];
+        window.open(urls[5]);
     })
     goService.addEventListener('mouseup',()=>{
-        window.location.href=urls[6];
+        window.open(urls[6]);
     })
 
     //加载图片
