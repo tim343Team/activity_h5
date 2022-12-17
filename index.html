@@ -468,7 +468,7 @@
         switch (bl){
             case 2:P11.play();P12.pause(); break;
             case 8:P11.pause();P12.play();P13.pause();break;
-            case 13:P12.pause();P13.play();P21.pause(); show(mp1,mp11);break;
+            case 13:P12.pause();P13.play();P21.pause();show(mp1,mp11);break;
             case 31:P13.pause();P21.play();P22.pause();show(mp2,mp22);break;
             case 43:P21.pause();P22.play();P31.pause();show(mp3,mp33);break;
             case 57:P22.pause();P31.play();P41.pause();show(mp4,mp44);break;
@@ -482,7 +482,6 @@
     })
     // 滚动条
     box.addEventListener('mousewheel',(e)=>{
-        console.log(e)
         requestAnimationFrame(()=>{
             let x=-e.wheelDelta||e.delayY/10;
             box.scrollLeft += x;
@@ -557,7 +556,7 @@
         ajax.responseType='blob';
         ajax.onload=()=>{
             // if(ajax.readyState===4){
-            console.log('完成')
+            // console.log('完成')
             count++;
             audios[i].src=URL.createObjectURL(ajax.response);
             checkCount()
