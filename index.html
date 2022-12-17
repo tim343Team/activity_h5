@@ -73,7 +73,7 @@
             position: absolute;
             width: 180px;
             height: 280px;
-            /*background: red;*/
+            background: red;
             display: inline-block;
         }
         .t1{
@@ -88,83 +88,164 @@
             left: 12%;
             bottom:22%;
         }
+        .t4{
+            left: 52%;
+            bottom:20%;
+        }
+        .t5{
+            left: 21%;
+            top: 21%;
+        }
+        .t6{
+            left: 63%;
+            top: 20%;
+        }
+        .t7{
+            left: 30%;
+            top:20%
+        }
+        .t8{
+            left: 56%;
+            top:20%
+        }
+        .t9{
+            left: 50%;
+            top:30%;
+        }
+        .hide{
+            display: none;
+        }
+        .notice{
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            font-size: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .notice>span{
+            font-size: 5rem;
+        }
     </style>
 </head>
 <body>
-<div class="m-img-box">
-    <img class="m-img-box-item" data-src="assets/m/mh1-1.png" id="mh1"/>
-    <img class="m-img-box-item" data-src="assets/m/mh1.png" id="mh1-1" style="display: none"/>
-    <img class="m-img-box-item" data-src="assets/m/mp1-1.png" id="mp1"/>
-    <img class="m-img-box-item" data-src="assets/m/mp1.png" id="mp1-1" style="display: none"/>
-    <img class="m-img-box-item" data-src="assets/m/mp2-1.png" id="mp2"/>
-    <img class="m-img-box-item" data-src="assets/m/mp2.png" id="mp2-1" style="display: none"/>
-    <img class="m-img-box-item" data-src="assets/m/mp3-1.png" id="mp3"/>
-    <img class="m-img-box-item" data-src="assets/m/mp3.png" id="mp3-1" style="display: none"/>
-    <img class="m-img-box-item" data-src="assets/m/mp4-1.png" id="mp4"/>
-    <img class="m-img-box-item" data-src="assets/m/mp4.png" id="mp4-1" style="display: none"/>
-    <img class="m-img-box-item" data-src="assets/m/mp5-1.png" id="mp5"/>
-    <img class="m-img-box-item" data-src="assets/m/mp5.png" id="mp5-1" style="display: none"/>
-    <img class="m-img-box-item" data-src="assets/m/mp6-1.png" id="mp6"/>
-    <img class="m-img-box-item" data-src="assets/m/mp6.png" id="mp6-1" style="display: none"/>
-</div>
-<div class="loading" id="loading">
-    <div class="relative boxItem">
-        <img id="cloud" class="img img-max" src="./assets/home-3.jpg">
-        <img id="home"  class="img img-max" style="display: none" data-src="./assets/home.jpg">
-        <img id="homeR"  class="img-absolute width100" style="display: none" src="./assets/home-r.gif">
-        <img id="open" style="display: none" class="img img-absolute width100" data-src="./assets/home.gif">
-        <div id="progress" class="img-absolute">
-            加载中
+<div id="isRotate">
+    <div class="m-img-box">
+        <img class="m-img-box-item" data-src="assets/m/mh1-1.png" id="mh1"/>
+        <img class="m-img-box-item" data-src="assets/m/mh1.png" id="mh1-1" style="display: none"/>
+        <img class="m-img-box-item" data-src="assets/m/mp1-1.png" id="mp1"/>
+        <img class="m-img-box-item" data-src="assets/m/mp1.png" id="mp1-1" style="display: none"/>
+        <img class="m-img-box-item" data-src="assets/m/mp2-1.png" id="mp2"/>
+        <img class="m-img-box-item" data-src="assets/m/mp2.png" id="mp2-1" style="display: none"/>
+        <img class="m-img-box-item" data-src="assets/m/mp3-1.png" id="mp3"/>
+        <img class="m-img-box-item" data-src="assets/m/mp3.png" id="mp3-1" style="display: none"/>
+        <img class="m-img-box-item" data-src="assets/m/mp4-1.png" id="mp4"/>
+        <img class="m-img-box-item" data-src="assets/m/mp4.png" id="mp4-1" style="display: none"/>
+        <img class="m-img-box-item" data-src="assets/m/mp5-1.png" id="mp5"/>
+        <img class="m-img-box-item" data-src="assets/m/mp5.png" id="mp5-1" style="display: none"/>
+        <img class="m-img-box-item" data-src="assets/m/mp6-1.png" id="mp6"/>
+        <img class="m-img-box-item" data-src="assets/m/mp6.png" id="mp6-1" style="display: none"/>
         </div>
-        <div class="point t1" id="goHome" style="display:none;">
-            <img src="" class="width100"/>
+    <div class="loading" id="loading">
+        <div class="relative boxItem">
+            <img id="cloud" class="img img-max" src="./assets/home-3.jpg">
+            <img id="home"  class="img img-max" style="display: none" data-src="./assets/home.jpg">
+            <img id="homeR"  class="img-absolute width100" style="display: none" src="./assets/home-r.gif">
+            <img id="open" style="display: none" class="img img-absolute width100" data-src="./assets/home.gif">
+            <div id="progress" class="img-absolute">
+                加载中
+            </div>
+            <div class="point t1" id="goHome" style="display:none;">
+                <img src="" class="width100"/>
+            </div>
+            <div class="point t2" id="goNext" style="display:none;">
+                <img src="" class="width100"/>
+            </div>
         </div>
-        <div class="point t2" id="goNext" style="display:none;">
-            <img src="" class="width100"/>
-        </div>
-    </div>
 
+    </div>
+    <div class="box " id="box">
+        <div class="relative boxItem">
+            <img class="img"  data-src="./assets/p1.jpg">
+            <img class="img img-absolute" data-src="./assets/p1.gif">
+            <div class="point t3" id="goBaiDu"></div>
+            <div class="point t4" id="goSchool"></div>
+        </div>
+        <div class="relative boxItem">
+            <img class="img"  data-src="./assets/p2.jpg">
+            <img class="img img-absolute" data-src="./assets/p2.gif">
+            <div class="point t5" id="goPort"></div>
+            <div class="point t6" id="goAchievements"></div>
+        </div>
+        <div class="relative boxItem">
+            <img class="img"  data-src="./assets/p3.jpg">
+            <img class="img img-absolute" data-src="./assets/p3.gif">
+            <div class="point t7" id="goMatch"></div>
+            <div class="point t8" id="goPersonnel"></div>
+        </div>
+        <div class="relative boxItem">
+            <img class="img" data-src="./assets/p4.jpg">
+            <img class="img img-absolute" data-src="./assets/p4.gif">
+            <div class="point t9" id="goService"></div>
+        </div>
+        <audio autoplay="autoplay" data-src="./assets/mp3/home-2.mp3" class="mp3" id="home-1" loop></audio>
+        <!--    <audio src="./assets/mp3/home-2.mp3"  data-src="./assets/mp3/home-2.mp3" class="mp3" id="home-2"></audio>-->
+        <audio data-src="./assets/mp3/p1-1.mp3" class="mp3" id="p1-1" loop></audio>
+        <audio data-src="./assets/mp3/p1-2.mp3" class="mp3" id="p1-2" loop></audio>
+        <audio data-src="./assets/mp3/p1-3.mp3" class="mp3" id="p1-3" loop></audio>
+        <!--    <audio data-src="./assets/mp3/p1-4.WAV" class="mp3" id="p1-4"></audio>-->
+        <!--    <audio data-src="./assets/mp3/p1-5.mp3" class="mp3" id="p1-5"></audio>-->
+        <audio data-src="./assets/mp3/p2-1.mp3" class="mp3" id="p2-1" loop></audio>
+        <audio data-src="./assets/mp3/p2-2.mp3" class="mp3" id="p2-2" loop></audio>
+        <!--    <audio data-src="./assets/mp3/p2-3.mp3" class="mp3" id="p2-3"></audio>-->
+        <!--    <audio data-src="./assets/mp3/p2-4.mp3" class="mp3" id="p2-4"></audio>-->
+        <!--    <audio data-src="./assets/mp3/p2-5.mp3" class="mp3" id="p2-5"></audio>-->
+        <audio data-src="./assets/mp3/p3-1.mp3" class="mp3" id="p3-1" loop></audio>
+        <!--    <audio data-src="./assets/mp3/p3-2.mp3" class="mp3" id="p3-2"></audio>-->
+        <!--    <audio data-src="./assets/mp3/p3-3.mp3" class="mp3" id="p3-3"></audio>-->
+        <!--    <audio data-src="./assets/mp3/p3-4.mp3" class="mp3" id="p3-4"></audio>-->
+        <audio data-src="./assets/mp3/p4-1.mp3" class="mp3" id="p4-1"></audio>
+        <audio data-src="./assets/mp3/p4-2.mp3" class="mp3" id="p4-2" loop></audio>
+    </div>
 </div>
-<div class="box " id="box">
-    <div class="relative boxItem">
-        <img class="img"  data-src="./assets/p1.jpg">
-        <img class="img img-absolute" data-src="./assets/p1.gif">
-        <div class="point t3" id="goBaiDu"></div>
+<div id="isNotice" class="hide">
+    <div class="notice">
+        <span>请横屏观看</span>
     </div>
-    <div class="relative boxItem">
-        <img class="img"  data-src="./assets/p2.jpg">
-        <img class="img img-absolute" data-src="./assets/p2.gif">
-    </div>
-    <div class="relative boxItem">
-        <img class="img"  data-src="./assets/p3.jpg">
-        <img class="img img-absolute" data-src="./assets/p3.gif">
-    </div>
-    <div class="relative boxItem">
-        <img class="img" data-src="./assets/p4.jpg">
-        <img class="img img-absolute" data-src="./assets/p4.gif">
-    </div>
-    <audio autoplay="autoplay" data-src="./assets/mp3/home-2.mp3" class="mp3" id="home-1" loop></audio>
-    <!--    <audio src="./assets/mp3/home-2.mp3"  data-src="./assets/mp3/home-2.mp3" class="mp3" id="home-2"></audio>-->
-    <audio data-src="./assets/mp3/p1-1.mp3" class="mp3" id="p1-1" loop></audio>
-    <audio data-src="./assets/mp3/p1-2.mp3" class="mp3" id="p1-2" loop></audio>
-    <audio data-src="./assets/mp3/p1-3.mp3" class="mp3" id="p1-3" loop></audio>
-    <!--    <audio data-src="./assets/mp3/p1-4.WAV" class="mp3" id="p1-4"></audio>-->
-    <!--    <audio data-src="./assets/mp3/p1-5.mp3" class="mp3" id="p1-5"></audio>-->
-    <audio data-src="./assets/mp3/p2-1.mp3" class="mp3" id="p2-1" loop></audio>
-    <audio data-src="./assets/mp3/p2-2.mp3" class="mp3" id="p2-2" loop></audio>
-    <!--    <audio data-src="./assets/mp3/p2-3.mp3" class="mp3" id="p2-3"></audio>-->
-    <!--    <audio data-src="./assets/mp3/p2-4.mp3" class="mp3" id="p2-4"></audio>-->
-    <!--    <audio data-src="./assets/mp3/p2-5.mp3" class="mp3" id="p2-5"></audio>-->
-    <audio data-src="./assets/mp3/p3-1.mp3" class="mp3" id="p3-1" loop></audio>
-    <!--    <audio data-src="./assets/mp3/p3-2.mp3" class="mp3" id="p3-2"></audio>-->
-    <!--    <audio data-src="./assets/mp3/p3-3.mp3" class="mp3" id="p3-3"></audio>-->
-    <!--    <audio data-src="./assets/mp3/p3-4.mp3" class="mp3" id="p3-4"></audio>-->
-    <audio data-src="./assets/mp3/p4-1.mp3" class="mp3" id="p4-1"></audio>
-    <audio data-src="./assets/mp3/p4-2.mp3" class="mp3" id="p4-2" loop></audio>
 </div>
 </body>
 <script>
-    let urls=['http://117.71.58.151:10086/home','https://www.baidu.com'];
+    let isRotate = document.getElementById('isRotate');
+    let isNotice = document.getElementById('isNotice');
+    window.addEventListener('resize',(e)=>{
+        checkRotate();
+    })
+    /**
+     * 检查反向
+     */
+    let checkRotate=()=>{
+        let screenWidth = document.documentElement.clientWidth;
+        let screenHeight = document.documentElement.clientHeight;
+        if(screenHeight>screenWidth){
+            isRotate.setAttribute('class','hide')
+            isNotice.setAttribute('class','')
+        }else{
+            isRotate.setAttribute('class','');
+            isNotice.setAttribute('class','hide')
+        }
+    }
+
+    checkRotate();
+    let urls=[
+        'http://117.71.58.151:10086/home',
+        'http://117.71.58.151:10086/cloud-hall',
+        'http://117.71.58.151:10086/tech-port',
+        'http://117.71.58.151:10086/tech-achievements',
+        'http://117.71.58.151:10086/match',
+        'http://117.71.58.151:10086/personnel',
+        'http://117.71.58.151:10086/service'
+    ];
     let URL= window.URL||window.webkitURL;
     let imgs = [...document.getElementsByTagName('img')].filter(item=>item.hasAttribute('data-src'));
     let audios = [...document.getElementsByTagName('audio')].filter(item=>item.hasAttribute('data-src'));
@@ -176,6 +257,14 @@
     let goNext = document.getElementById('goNext');
     let goHome = document.getElementById('goHome');
     let goBaiDu = document.getElementById('goBaiDu');
+    let goSchool = document.getElementById('goSchool');
+    let goPort = document.getElementById('goPort');
+    let goAchievements = document.getElementById('goAchievements');
+    let goMatch = document.getElementById('goMatch');
+    let goPersonnel = document.getElementById('goPersonnel');
+    let goService = document.getElementById('goService');
+
+
     let home=document.getElementById('home');
     let homeR=document.getElementById('homeR');
     let cloud = document.getElementById('cloud')
@@ -218,19 +307,9 @@
     function checkCount(){
         progress.innerText='正在加载!!!!'+count+'/'+(imgs.length+audios.length)
         if(count===(imgs.length+audios.length)){
-            // setTimeout(()=>{
-            //     loading.setAttribute('style','display:none');
-            //     box.setAttribute('style','display:block');
-            //     // H2.pause();
-            //     P11.play();
-            //     },1800)
-            // H1.play();
-            // H2.play();
             progress.innerText='';
             open.setAttribute('style','display:inline-block')
-            // goNext.setAttribute('style','display:inline-block')
             home.setAttribute('style','display:inline-block')
-            // points.setAttribute('style','display:inline-block')
             homeR.setAttribute('style','display:inline-block')
             cloud.setAttribute('style','display:none')
             setTimeout(()=>{
@@ -238,20 +317,13 @@
                 goHome.setAttribute('style','display:inline-block')
                 open.setAttribute('style','display:none')
             },3000)
-            // for(let i=0;i<imgs.length;i++){
-            //     let src=imgs[i].getAttribute('data-src');
-            //     imgs[i].setAttribute('src',src);
-            // }
-            // for(let i=0;i<audios.length;i++){
-            //     let src=audios[i].getAttribute('data-src');
-            //     audios[i].setAttribute('src',src);
-            // }
         }else{
             loading.setAttribute('style','display:flex');
             box.setAttribute('style','display:none');
             open.setAttribute('style','display:none');
         }
     }
+    // 首页跳转
     goNext.addEventListener('mouseup',(e)=>{
         if(count===(imgs.length+audios.length)){
             loading.setAttribute('style','display:none');
@@ -263,13 +335,14 @@
             alert('我还在加载')
         }
     })
+    //展示
     let show=(a,b)=>{
         a.setAttribute('style','display:none'); b.setAttribute('style','display:inline-block');
     }
+    //滚动
     box.addEventListener('scroll',(e)=>{
         let totalWidth=box.scrollWidth;
-        let bl=Math.floor((box.scrollLeft/totalWidth)*100)
-        console.log(bl);
+        let bl=Math.floor((box.scrollLeft/totalWidth)*100);
         switch (bl){
             case 2:P11.play();P12.pause(); break;
             case 8:P11.pause();P12.play();P13.pause();break;
@@ -285,6 +358,7 @@
             // alert('到底了')
         }
     })
+    // 滚动条
     box.addEventListener('mousewheel',(e)=>{
         console.log(e)
         requestAnimationFrame(()=>{
@@ -293,12 +367,34 @@
         })
         e.preventDefault();
     });
+
+    //跳转
     goHome.addEventListener('mouseup',()=>{
         window.location.href=urls[0];
     })
     goBaiDu.addEventListener('mouseup',()=>{
+        window.location.href=urls[0];
+    })
+    goSchool.addEventListener('mouseup',()=>{
         window.location.href=urls[1];
     })
+    goPort.addEventListener('mouseup',()=>{
+        window.location.href=urls[2];
+    })
+    goAchievements.addEventListener('mouseup',()=>{
+        window.location.href=urls[3];
+    })
+    goMatch.addEventListener('mouseup',()=>{
+        window.location.href=urls[4];
+    })
+    goPersonnel.addEventListener('mouseup',()=>{
+        window.location.href=urls[5];
+    })
+    goService.addEventListener('mouseup',()=>{
+        window.location.href=urls[6];
+    })
+
+    //加载图片
     let loadImg=(img,url)=>{
         let image=new Image();
         image.src=url;
