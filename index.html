@@ -71,7 +71,7 @@
             }
 
             .m-img-box-bg {
-                width: 50vh;
+                /*width: 50vh;*/
                 height: 10vw;
                 background: rgba(0, 0, 0, 0.2);
                 border-bottom-left-radius: 16px;
@@ -240,7 +240,7 @@
             }
 
             .m-img-box-bg {
-                width: 50%;
+                /*width: 50%;*/
                 height: 100%;
                 background: rgba(0, 0, 0, 0.2);
                 border-bottom-left-radius: 16px;
@@ -379,8 +379,8 @@
     <div class="loading" id="loading">
         <div class="relative boxItem">
             <img id="cloud" class="img img-max" src="./assets/home-3.jpg">
+            <img id="homeR" class="img img-max" style="display: none" src="./assets/home-r.gif">
             <img id="home" class="img img-max" style="display: none" data-src="./assets/home.jpg">
-            <img id="homeR" class="img-absolute width100" style="display: none" src="./assets/home-r.gif">
             <img id="open" style="display: none" class="img img-absolute width100" data-src="./assets/home.gif">
             <div id="progress" class="img-absolute">
 
@@ -397,8 +397,8 @@
     <div class="box " id="box">
         <div class="m-img-box">
             <div class="m-img-box-bg" id="box-bg">
-<!--                                <img class="m-img-box-item" data-src="assets/m/mh1-1.jpg" id="mh1"/>-->
-<!--                                <img class="m-img-box-item" data-src="assets/m/mh1.jpg" id="mh1-1" style="display: none"/>-->
+                <!--                                <img class="m-img-box-item" data-src="assets/m/mh1-1.jpg" id="mh1"/>-->
+                <!--                                <img class="m-img-box-item" data-src="assets/m/mh1.jpg" id="mh1-1" style="display: none"/>-->
                 <img class="m-img-box-item" data-src="assets/m/mp1-1.jpg" id="mp1"/>
                 <img class="m-img-box-item" data-src="assets/m/mp1.jpg" id="mp1-1" style="display: none"/>
                 <img class="m-img-box-item" data-src="assets/m/mp2-1.jpg" id="mp2"/>
@@ -461,15 +461,15 @@
 </body>
 <script>
     let audioUrl = [
-        './assets/mp3/home-2.mp3'
-        , './assets/mp3/p1-1.mp3'
-        , './assets/mp3/p1-2.mp3'
-        , './assets/mp3/p1-3.mp3'
-        , './assets/mp3/p2-1.mp3'
-        , './assets/mp3/p2-2.mp3'
-        , './assets/mp3/p3-1.mp3'
-        , './assets/mp3/p4-1.mp3'
-        , './assets/mp3/p4-2.mp3'
+        // './assets/mp3/home-2.mp3'
+        // , './assets/mp3/p1-1.mp3'
+        // , './assets/mp3/p1-2.mp3'
+        // , './assets/mp3/p1-3.mp3'
+        // , './assets/mp3/p2-1.mp3'
+        // , './assets/mp3/p2-2.mp3'
+        // , './assets/mp3/p3-1.mp3'
+        // , './assets/mp3/p4-1.mp3'
+        // , './assets/mp3/p4-2.mp3'
     ]
     let isRotate = document.getElementById('isRotate');
     // let isNotice = document.getElementById('isNotice');
@@ -709,7 +709,9 @@
     }
     let playOnlyOne = (url) => {
         H1.src = url;
-        H1.play()
+        setTimeout(() => {
+            H1.play()
+        }, 10)
         // dom.parentNode.setAttribute('style','display:inline-block')
         // dom.play()
     }
