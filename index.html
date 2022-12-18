@@ -63,6 +63,23 @@
             .m-img-box-item{
                 height: 100%;
             }
+            .m-progress-bg{
+                z-index: 999;
+                position: fixed;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin:0 auto;
+                width: 50vh;
+                height: 10vh;
+                text-align: center;
+                background: rgba(0, 0, 0, 0.2);
+                color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
             .img{
                 height: 100vw;
             }
@@ -175,6 +192,22 @@
         .m-img-box-item{
             height: 100%;
         }
+        .m-progress-bg{
+                z-index: 999;
+                position: fixed;
+                top: 50%;
+                left: 0;
+                right: 0;
+                margin:0 auto;
+                width: 50vh;
+                height: 10vh;
+                text-align: center;
+                background: rgba(0, 0, 0, 0.2);
+                color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+        }
         .img{
             height: 100%;
         }
@@ -272,6 +305,11 @@
         <img class="m-img-box-item" data-src="assets/m/mp6-1.jpg" id="mp6"/>
         <img class="m-img-box-item" data-src="assets/m/mp6.jpg" id="mp6-1" style="display: none"/>
         </div>
+    <div class="m-progress-bg" id="progress-bg">
+        <div id="progress-nu">
+            加载中...
+        </div>
+    </div>
     <div class="loading" id="loading">
         <div class="relative boxItem">
             <img id="cloud" class="img img-max" src="./assets/home-3.jpg">
@@ -279,7 +317,7 @@
             <img id="homeR"  class="img-absolute width100" style="display: none" src="./assets/home-r.gif">
             <img id="open" style="display: none" class="img img-absolute width100" data-src="./assets/home.gif">
             <div id="progress" class="img-absolute">
-                加载中
+                
             </div>
             <div class="point t1" id="goHome" style="display:none;">
                 <img src="" class="width100"/>
@@ -382,6 +420,8 @@
     let imgs = [...document.getElementsByTagName('img')].filter(item=>item.hasAttribute('data-src'));
     // let audios = [...document.getElementsByTagName('audio')].filter(item=>item.hasAttribute('data-src'));
     let loading=document.getElementById('loading');
+    let progressBg = document.getElementById('progress-bg');
+    let progressNu = document.getElementById('progress-nu');
     // let points=[...document.getElementsByClassName('point')];
     let progress=document.getElementById('progress')
     let box=document.getElementById('box');
@@ -437,9 +477,11 @@
     // let P41= document.getElementById('p4-1')
     // let P42= document.getElementById('p4-2')
     function checkCount(){
-        progress.innerText='正在加载!!!!'+count+'/'+(imgs.length+audioUrl.length)
+        // progress.innerText='正在加载!!!!'+count+'/'+(imgs.length+audioUrl.length)
+        progressNu.innerText='正在加载...' + count + '/' + (imgs.length + audioUrl.length)
         if(count===(imgs.length+audioUrl.length)){
-            progress.innerText='';
+            progressNu.innerText='';
+            progressBg.setAttribute('style', 'display:none');
             open.setAttribute('style','display:inline-block')
             home.setAttribute('style','display:inline-block')
             homeR.setAttribute('style','display:inline-block')
@@ -451,6 +493,7 @@
                 open.setAttribute('style','display:none')
             },3000)
         }else{
+            progressBg.setAttribute('style', 'display:flex');
             loading.setAttribute('style','display:flex');
             box.setAttribute('style','display:none');
             open.setAttribute('style','display:none');
