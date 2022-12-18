@@ -397,8 +397,8 @@
     <div class="box " id="box">
         <div class="m-img-box">
             <div class="m-img-box-bg" id="box-bg">
-                <img class="m-img-box-item" data-src="assets/m/mh1-1.jpg" id="mh1"/>
-                <img class="m-img-box-item" data-src="assets/m/mh1.jpg" id="mh1-1" style="display: none"/>
+<!--                                <img class="m-img-box-item" data-src="assets/m/mh1-1.jpg" id="mh1"/>-->
+<!--                                <img class="m-img-box-item" data-src="assets/m/mh1.jpg" id="mh1-1" style="display: none"/>-->
                 <img class="m-img-box-item" data-src="assets/m/mp1-1.jpg" id="mp1"/>
                 <img class="m-img-box-item" data-src="assets/m/mp1.jpg" id="mp1-1" style="display: none"/>
                 <img class="m-img-box-item" data-src="assets/m/mp2-1.jpg" id="mp2"/>
@@ -527,7 +527,7 @@
     let homeR = document.getElementById('homeR');
     let cloud = document.getElementById('cloud')
 
-    let mh1 = document.getElementById('mh1')
+    // let mh1 = document.getElementById('mh1')
     let mp1 = document.getElementById('mp1')
     let mp2 = document.getElementById('mp2')
     let mp3 = document.getElementById('mp3')
@@ -535,7 +535,7 @@
     let mp5 = document.getElementById('mp5')
     let mp6 = document.getElementById('mp6')
 
-    let mh11 = document.getElementById('mh1-1')
+    // let mh11 = document.getElementById('mh1-1')
     let mp11 = document.getElementById('mp1-1')
     let mp22 = document.getElementById('mp2-1')
     let mp33 = document.getElementById('mp3-1')
@@ -564,7 +564,7 @@
     // let P42= document.getElementById('p4-2')
     function checkCount() {
         // progress.innerText='正在加载!!!!'+count+'/'+(imgs.length+audioUrl.length)
-        progressNu.innerText = '正在加载...' + count + '/' + (imgs.length + audioUrl.length)
+        progressNu.innerText = '正在加载...' + (count / (imgs.length + audioUrl.length) * 100).toFixed(0) + "%"
         if (count === (imgs.length + audioUrl.length)) {
             progressNu.innerText = '';
             progressBg.setAttribute('style', 'display:none');
@@ -601,7 +601,7 @@
             loading.setAttribute('style', 'display:none');
             boxBg.setAttribute('style', 'display:flex')
             box.setAttribute('style', 'display:block');
-            show(mh1, mh11);
+            // show(mh1, mh11);
             play(audioUrl[1])
         } else {
             alert('我还在加载')
@@ -684,7 +684,7 @@
                 show(mp5, mp55);
                 break;
             case 83:
-                play(audioUrl[7]);
+                playOnlyOne(audioUrl[7]);
                 break;
             case 88:
                 play(audioUrl[8]);
@@ -704,6 +704,12 @@
         setTimeout(() => {
             H1.play()
         }, 10)
+        // dom.parentNode.setAttribute('style','display:inline-block')
+        // dom.play()
+    }
+    let playOnlyOne = (url) => {
+        H1.src = url;
+        H1.play()
         // dom.parentNode.setAttribute('style','display:inline-block')
         // dom.play()
     }
