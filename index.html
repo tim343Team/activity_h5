@@ -592,6 +592,9 @@
     document.addEventListener('YixinJSBridgeReady', () => {
         play(audioUrl[0])
     })
+    loading.addEventListener('mouseup', () => {
+        play(audioUrl[0])
+    })
     loading.addEventListener('touchstart', () => {
         play(audioUrl[0])
     })
@@ -700,6 +703,9 @@
         dom.pause()
     }
     let play = (url) => {
+        if(H1.src===url){
+            return
+        }
         H1.src = url;
         H1.loop=url!==audioUrl[7];
         setTimeout(() => {
