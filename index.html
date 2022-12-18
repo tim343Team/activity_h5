@@ -461,15 +461,15 @@
 </body>
 <script>
     let audioUrl = [
-        // './assets/mp3/home-2.mp3'
-        // , './assets/mp3/p1-1.mp3'
-        // , './assets/mp3/p1-2.mp3'
-        // , './assets/mp3/p1-3.mp3'
-        // , './assets/mp3/p2-1.mp3'
-        // , './assets/mp3/p2-2.mp3'
-        // , './assets/mp3/p3-1.mp3'
-        // , './assets/mp3/p4-1.mp3'
-        // , './assets/mp3/p4-2.mp3'
+        './assets/mp3/home-2.mp3'
+        , './assets/mp3/p1-1.mp3'
+        , './assets/mp3/p1-2.mp3'
+        , './assets/mp3/p1-3.mp3'
+        , './assets/mp3/p2-1.mp3'
+        , './assets/mp3/p2-2.mp3'
+        , './assets/mp3/p3-1.mp3'
+        , './assets/mp3/p4-1.mp3'
+        , './assets/mp3/p4-2.mp3'
     ]
     let isRotate = document.getElementById('isRotate');
     // let isNotice = document.getElementById('isNotice');
@@ -701,6 +701,7 @@
     }
     let play = (url) => {
         H1.src = url;
+        H1.loop=url!==audioUrl[7];
         setTimeout(() => {
             H1.play()
         }, 10)
