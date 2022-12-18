@@ -444,6 +444,7 @@
             home.setAttribute('style','display:inline-block')
             homeR.setAttribute('style','display:inline-block')
             cloud.setAttribute('style','display:none')
+            play(audioUrl[0])
             setTimeout(()=>{
                 goNext.setAttribute('style','display:inline-block')
                 goHome.setAttribute('style','display:inline-block')
@@ -456,15 +457,12 @@
         }
     }
     document.addEventListener('WeixinJSBridgeReady',()=>{
-        // H1.play();
         play(audioUrl[0])
     })
     document.addEventListener('YixinJSBridgeReady',()=>{
-
         play(audioUrl[0])
     })
     loading.addEventListener('touchstart',()=>{
-
         play(audioUrl[0])
     })
     // 首页跳转
@@ -527,7 +525,7 @@
         H1.src=url;
         setTimeout(()=>{
             H1.play()
-        },100)
+        },10)
         // dom.parentNode.setAttribute('style','display:inline-block')
         // dom.play()
     }
