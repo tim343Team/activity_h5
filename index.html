@@ -312,20 +312,58 @@
 
             .point {
                 position: absolute;
-                width: 250px;
-                height: 280px;
+                width: 200px;
+                height: 200px;
+                transform: scale(0.5);
                 /*background: red;*/
                 display: inline-block;
+                background: url("./assets/move/point.jpg");
+                animation: point_animate 1s steps(1) 0s infinite both;
+            }
+            @keyframes point_animate{
+                0%{
+                    background-position: 0 0;
+                }
+                10%{
+                    background-position: -100% 0;
+                }
+                20%{
+                    background-position: -200% 0;
+                }
+                30%{
+                    background-position: -300% 0;
+                }
+                40%{
+                    background-position: -400% 0;
+                }
+                50%{
+                    background-position: 0 -100%;
+                }
+                60%{
+                    background-position: -100% -100%;
+                }
+                70%{
+                    background-position: -200% -100%;
+                }
+                80%{
+                    background-position: -300% -100%;
+                }
+                90%{
+                    background-position: -400% -100%;
+                }
+                100%{
+                    background-position: 0 0;
+                }
             }
 
             .t1 {
-                left: 27.1%;
-                top: 20.8%;
+                left: 22.1%;
+                top: 22.8%;
             }
 
             .t2 {
-                right: 19.5%;
-                top: 41.5%;
+                right: 15.5%;
+                top: 43.5%;
             }
 
             .t3 {
@@ -415,7 +453,7 @@
         </div>
         <div class="relative boxItem">
             <img class="img" data-src="./assets/p1.jpg">
-            <img class="img img-absolute" data-src="./assets/p1.gif">
+<!--            <img class="img img-absolute" data-src="./assets/p1.gif">-->
             <div class="point t3" id="goBaiDu"></div>
             <div class="point t4" id="goSchool"></div>
         </div>
@@ -470,6 +508,10 @@
         , './assets/mp3/p3-1.mp3'
         , './assets/mp3/p4-1.mp3'
         , './assets/mp3/p4-2.mp3'
+    ]
+    let moveUrl = [
+        'assets/move/p1.jpg',
+        'assets/move/point.jpg'
     ]
     let isRotate = document.getElementById('isRotate');
     // let isNotice = document.getElementById('isNotice');
@@ -564,8 +606,8 @@
     // let P42= document.getElementById('p4-2')
     function checkCount() {
         // progress.innerText='正在加载!!!!'+count+'/'+(imgs.length+audioUrl.length)
-        progressNu.innerText = '正在加载...' + (count / (imgs.length + audioUrl.length) * 100).toFixed(0) + "%"
-        if (count === (imgs.length + audioUrl.length)) {
+        progressNu.innerText = '正在加载...' + (count / (imgs.length + moveUrl.length + audioUrl.length) * 100).toFixed(0) + "%"
+        if (count === (imgs.length + moveUrl.length + audioUrl.length)) {
             progressNu.innerText = '';
             progressBg.setAttribute('style', 'display:none');
             open.setAttribute('style', 'display:inline-block')
@@ -600,7 +642,7 @@
     })
     // 首页跳转
     goNext.addEventListener('mouseup', (e) => {
-        if (count === (imgs.length + audioUrl.length)) {
+        if (count === (imgs.length + moveUrl.length + audioUrl.length)) {
             loading.setAttribute('style', 'display:none');
             boxBg.setAttribute('style', 'display:flex')
             box.setAttribute('style', 'display:block');
@@ -772,6 +814,26 @@
             checkCount();
             img.src = url;
         }
+    }
+
+    //加载图片
+    let loadMoveUrl = (url) => {
+        let image = new Image();
+        image.src = url;
+        if (image.complete) {
+            count++;
+            checkCount();
+            return;
+        }
+        image.onload = () => {
+            count++;
+            checkCount();
+        }
+    }
+    // 序列帧
+    for (let i = 0; i < moveUrl.length; i++){
+        let src = moveUrl[i];
+        loadMoveUrl(src);
     }
     //图片
     for (let i = 0; i < imgs.length; i++) {
