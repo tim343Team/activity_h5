@@ -27,7 +27,6 @@
             width: 100vw;
             height: 100vh;
         }
-
         @media screen and (orientation: portrait) {
             #isRotate {
                 width: 100vh;
@@ -143,12 +142,16 @@
                 object-fit: cover;
             }
 
+
             .point {
                 position: absolute;
-                width: 250px;
-                height: 320px;
+                width: 200px;
+                height: 200px;
+                z-index: 9999;
                 /*background: red;*/
                 display: inline-block;
+                background: url("./assets/move/point.jpg");
+                animation: point_animate 1s steps(1) 0s infinite both;
             }
 
             .t1 {
@@ -200,6 +203,105 @@
             .notice > span {
                 font-size: 5rem;
             }
+            .box-max{
+                width: 100vh;
+                height: 100vw;
+                position: absolute;
+                left: 0;
+                top:0;
+                background:url("./assets/move/cloud.png");
+                animation: cloud 300ms steps(1) 0s ;
+            }
+
+
+            .car-one{
+                position: absolute;
+                left: 7.5%;
+                bottom: 15%;
+                animation: runP1 1.5s steps(25,end) infinite both;
+                background-position-y: 0;
+            }
+            .car-two{
+                position: absolute;
+                left: 4.7%;
+                bottom: 0;
+                animation: runP1 2s steps(25,end) infinite both;
+                background-position-y: -100% !important;
+            }
+            .car-three{
+                position: absolute;
+                left: 18%;
+                bottom: 0;
+                animation: runP1 1.5s steps(25,end) infinite both;
+                background-position-y: -700% !important;
+            }
+            .swallow{
+                position: absolute;
+                left: 39%;
+                top: 10%;
+                animation: runP1 3s steps(25,end) infinite both;
+                background-position-y: -600% !important;
+            }
+            .swallow-two{
+                position: absolute;
+                left: 84%;
+                top: 10%;
+                animation: runP1 3s steps(25,end) infinite both;
+                background-position-y: -600% !important;
+            }
+            .tree-one{
+                position: absolute;
+                left: 51.5%;
+                bottom: 31%;
+                animation: runP1 3s steps(25,end) infinite both;
+                background-position-y: -500% !important;
+            }
+            .tree-two{
+                position: absolute;
+                left: 52%;
+                bottom: 30%;
+                animation: runP1 2.5s steps(25,end) infinite both;
+                background-position-y: -500% !important;
+            }
+            .tree-three{
+                position: absolute;
+                left: 81%;
+                bottom: 8%;
+                animation: runP1 1.5s steps(25,end) infinite both;
+                background-position-y: -400% !important;
+            }
+            .tree-five{
+                position: absolute;
+                left: 66%;
+                bottom: 8%;
+                animation: runP1 1.5s steps(25,end) infinite both;
+                background-position-y: -300% !important;
+            }
+            .tree-four{
+                position: absolute;
+                left: 71%;
+                bottom: 8%;
+                animation: runP1 1.5s steps(25,end) infinite both;
+                background-position-y: -200% !important;
+            }
+            .tree-six{
+                position: absolute;
+                left: 85.5%;
+                bottom: 12%;
+                animation: runP1 1.5s steps(25,end) infinite both;
+                background-position-y: -300% !important;
+            }
+            .tree-seven{
+                position: absolute;
+                left: 89.5%;
+                bottom: 12%;
+                animation: runP1 1.5s steps(25,end) infinite both;
+                background-position-y: -200% !important;
+            }
+            .p1-run{
+                transform: scale(1.25);
+            }
+
         }
 
         @media screen and (orientation: landscape) {
@@ -315,47 +417,12 @@
                 width: 200px;
                 height: 200px;
                 transform: scale(0.5);
+                z-index: 9999;
                 /*background: red;*/
                 display: inline-block;
                 background: url("./assets/move/point.jpg");
                 animation: point_animate 1s steps(1) 0s infinite both;
             }
-            @keyframes point_animate{
-                0%{
-                    background-position: 0 0;
-                }
-                10%{
-                    background-position: -100% 0;
-                }
-                20%{
-                    background-position: -200% 0;
-                }
-                30%{
-                    background-position: -300% 0;
-                }
-                40%{
-                    background-position: -400% 0;
-                }
-                50%{
-                    background-position: 0 -100%;
-                }
-                60%{
-                    background-position: -100% -100%;
-                }
-                70%{
-                    background-position: -200% -100%;
-                }
-                80%{
-                    background-position: -300% -100%;
-                }
-                90%{
-                    background-position: -400% -100%;
-                }
-                100%{
-                    background-position: 0 0;
-                }
-            }
-
             .t1 {
                 left: 22.1%;
                 top: 22.8%;
@@ -404,6 +471,176 @@
             .notice > span {
                 font-size: 5rem;
             }
+            .box-max{
+                width: 100vw;
+                height: 100vh;
+                position: absolute;
+                left: 0;
+                top:0;
+                background:url("./assets/move/cloud.png");
+                animation: cloud 300ms steps(1) 0s ;
+            }
+            .car-one{
+                position: absolute;
+                left: 7.5%;
+                bottom: 15%;
+                animation: runP1 1.5s steps(25,end) infinite both;
+                background-position-y: 0;
+            }
+            .car-two{
+                position: absolute;
+                left: 4.7%;
+                bottom: 0;
+                animation: runP1 2s steps(25,end) infinite both;
+                background-position-y: -100% !important;
+            }
+            .car-three{
+                position: absolute;
+                left: 17%;
+                bottom: 0;
+                animation: runP1 1.5s steps(25,end) infinite both;
+                background-position-y: -700% !important;
+            }
+            .swallow{
+                position: absolute;
+                left: 39%;
+                top: 10%;
+                animation: runP1 3s steps(25,end) infinite both;
+                background-position-y: -600% !important;
+            }
+            .swallow-two{
+                position: absolute;
+                left: 84%;
+                top: 10%;
+                animation: runP1 3s steps(25,end) infinite both;
+                background-position-y: -600% !important;
+            }
+            .tree-one{
+                position: absolute;
+                left: 50.5%;
+                bottom: 31%;
+                animation: runP1 3s steps(25,end) infinite both;
+                background-position-y: -500% !important;
+            }
+            .tree-two{
+                position: absolute;
+                left: 51%;
+                bottom: 30%;
+                animation: runP1 2.5s steps(25,end) infinite both;
+                background-position-y: -500% !important;
+            }
+            .tree-three{
+                position: absolute;
+                left: 81%;
+                bottom: 8%;
+                animation: runP1 1.5s steps(25,end) infinite both;
+                background-position-y: -400% !important;
+            }
+            .tree-five{
+                position: absolute;
+                left: 66%;
+                bottom: 8%;
+                animation: runP1 1.5s steps(25,end) infinite both;
+                background-position-y: -300% !important;
+            }
+            .tree-four{
+                position: absolute;
+                left: 71%;
+                bottom: 8%;
+                animation: runP1 1.5s steps(25,end) infinite both;
+                background-position-y: -200% !important;
+            }
+            .tree-six{
+                position: absolute;
+                left: 85.5%;
+                bottom: 12%;
+                animation: runP1 1.5s steps(25,end) infinite both;
+                background-position-y: -300% !important;
+            }
+            .tree-seven{
+                position: absolute;
+                left: 89.5%;
+                bottom: 12%;
+                animation: runP1 1.5s steps(25,end) infinite both;
+                background-position-y: -200% !important;
+            }
+        }
+        @keyframes cloud {
+            0%{background-position: 0 0;}
+            4%{background-position: -100% 0;}
+            8%{background-position: -200% 0;}
+            12%{background-position: -300% 0;}
+            16%{background-position: -400% 0;}
+            20%{background-position: 0 -100%;}
+            24%{background-position: -100% -100%;}
+            28%{background-position: -200% -100%;}
+            32%{background-position: -300% -100%;}
+            36%{background-position: -400% -100%;}
+            40%{background-position: 0 -200%;}
+            44%{background-position: -100% -200%;}
+            48%{background-position: -200% -200%;}
+            52%{background-position: -300% -200%;}
+            56%{background-position: -400% -200%;}
+            60%{background-position: 0 -300%;}
+            64%{background-position: -100% -300%;}
+            68%{background-position: -200% -300%;}
+            72%{background-position: -300% -300%;}
+            76%{background-position: -400% -300%;}
+            80%{background-position: 0 -400%;}
+            84%{background-position: -100% -400%;}
+            88%{background-position: -200% -400%;}
+            92%{background-position: -300% -400%;}
+            96%{background-position: -400% -400%;}
+            100%{background-position: -400% -400%;}
+        }
+
+        @keyframes point_animate{
+            0%{
+                background-position: 0 0;
+            }
+            10%{
+                background-position: -100% 0;
+            }
+            20%{
+                background-position: -200% 0;
+            }
+            30%{
+                background-position: -300% 0;
+            }
+            40%{
+                background-position: -400% 0;
+            }
+            50%{
+                background-position: 0 -100%;
+            }
+            60%{
+                background-position: -100% -100%;
+            }
+            70%{
+                background-position: -200% -100%;
+            }
+            80%{
+                background-position: -300% -100%;
+            }
+            90%{
+                background-position: -400% -100%;
+            }
+            100%{
+                background-position: 0 0;
+            }
+        }
+        .p1-run{
+            width: 230px;
+            height: 98.25px;
+            background: url("assets/move/p1.jpg");
+        }
+        @keyframes runP1 {
+            to{
+                background-position-x: -2500%;
+            }
+            from{
+                background-position-x: 0;
+            }
         }
     </style>
 </head>
@@ -415,9 +652,12 @@
         </div>
     </div>
     <div class="loading" id="loading">
+        <div id="homeR" class="box-max" style="display: none">
+        </div>
         <div class="relative boxItem">
             <img id="cloud" class="img img-max" src="./assets/home-3.jpg">
-            <img id="homeR" class="img img-max" style="display: none" src="./assets/home-r.gif">
+<!--            <img id="homeR" class="img img-max" style="display: none" src="./assets/home-r.gif">-->
+
             <img id="home" class="img img-max" style="display: none" data-src="./assets/home.jpg">
             <img id="open" style="display: none" class="img img-absolute width100" data-src="./assets/home.gif">
             <div id="progress" class="img-absolute">
@@ -456,6 +696,22 @@
 <!--            <img class="img img-absolute" data-src="./assets/p1.gif">-->
             <div class="point t3" id="goBaiDu"></div>
             <div class="point t4" id="goSchool"></div>
+            <!--车-->
+            <div class="p1-run car-one"></div>
+            <div class="p1-run car-two"></div>
+            <div class="p1-run car-three"></div>
+<!--            燕子-->
+            <div class="p1-run swallow"></div>
+            <div class="p1-run swallow-two"></div>
+
+            <div class="p1-run tree-one"></div>
+            <div class="p1-run tree-two"></div>
+            <div class="p1-run tree-three"></div>
+            <div class="p1-run tree-four"></div>
+            <div class="p1-run tree-five"></div>
+            <div class="p1-run tree-six"></div>
+            <div class="p1-run tree-seven"></div>
+
         </div>
         <div class="relative boxItem">
             <img class="img" data-src="./assets/p2.jpg">
@@ -511,6 +767,7 @@
     ]
     let moveUrl = [
         'assets/move/p1.jpg',
+        './assets/move/cloud.png',
         'assets/move/point.jpg'
     ]
     let isRotate = document.getElementById('isRotate');
@@ -644,6 +901,7 @@
     goNext.addEventListener('mouseup', (e) => {
         if (count === (imgs.length + moveUrl.length + audioUrl.length)) {
             loading.setAttribute('style', 'display:none');
+            homeR.setAttribute('style', 'display:none');
             boxBg.setAttribute('style', 'display:flex')
             box.setAttribute('style', 'display:block');
             // show(mh1, mh11);
