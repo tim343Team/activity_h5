@@ -204,13 +204,13 @@
                 font-size: 5rem;
             }
             .box-max{
-                width: 100vh;
-                height: 100vw;
+                width: 2581px;
+                height: 1080px;
                 position: absolute;
                 left: 0;
                 top:0;
                 background:url("./assets/move/cloud.png");
-                animation: cloud 300ms steps(1) 0s ;
+                animation: cloud 3s steps(1) 0s ;
             }
 
 
@@ -472,13 +472,14 @@
                 font-size: 5rem;
             }
             .box-max{
-                width: 100vw;
-                height: 100vh;
+                width: 2581px;
+                height: 1080px;
                 position: absolute;
+                object-fit: cover;
                 left: 0;
                 top:0;
                 background:url("./assets/move/cloud.png");
-                animation: cloud 300ms steps(1) 0s ;
+                animation: cloud 3s steps(1) 0s ;
             }
             .car-one{
                 position: absolute;
@@ -652,14 +653,13 @@
         </div>
     </div>
     <div class="loading" id="loading">
-        <div id="homeR" class="box-max" style="display: none">
-        </div>
         <div class="relative boxItem">
             <img id="cloud" class="img img-max" src="./assets/home-3.jpg">
-<!--            <img id="homeR" class="img img-max" style="display: none" src="./assets/home-r.gif">-->
+            <img id="homeR" class="img img-max" style="display: none" src="./assets/home-r.gif">
 
             <img id="home" class="img img-max" style="display: none" data-src="./assets/home.jpg">
-            <img id="open" style="display: none" class="img img-absolute width100" data-src="./assets/home.gif">
+            <div id="open"  class="box-max" ></div>
+<!--            <img id="open" style="display: none" class="img img-absolute width100" data-src="./assets/home.gif">-->
             <div id="progress" class="img-absolute">
 
             </div>
@@ -901,7 +901,6 @@
     goNext.addEventListener('mouseup', (e) => {
         if (count === (imgs.length + moveUrl.length + audioUrl.length)) {
             loading.setAttribute('style', 'display:none');
-            homeR.setAttribute('style', 'display:none');
             boxBg.setAttribute('style', 'display:flex')
             box.setAttribute('style', 'display:block');
             // show(mh1, mh11);
