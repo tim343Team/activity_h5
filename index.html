@@ -1407,6 +1407,8 @@
         ajax.send()
         ajax.onload=()=>{
                 console.log('完成')
+            console.log(JSON.parse(ajax.responseText).rows)
+            urls = JSON.parse(ajax.responseText).rows.map(item=>item.noticeTitle)
         }
     }
     getURLs();
