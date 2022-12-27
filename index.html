@@ -425,6 +425,143 @@
                 left: 5%;
             }
 
+            .train{
+                position: absolute;
+                /*transform: scale(0.25);*/
+                background-size: 100vh 100vw !important;
+                left: 60.6%;
+                bottom: 48.333333%;
+            }
+            .robot{
+                left: 14.5%;
+                top: 48%;
+                position: absolute;
+                animation: runP2 2.5s steps(25,end) infinite both;
+                background-position-y: -100% !important;
+            }
+            .start{
+                position: absolute;
+                left: 66%;
+                top: 0;
+                animation: runP2 2.5s steps(25,end) infinite both;
+
+            }
+            .feng-one{
+                position: absolute;
+                left: 70%;
+                bottom: -11%;
+                animation: runP2 2.5s steps(25,end) infinite both;
+                background-position-y: -200% !important;
+            }
+            .feng-two{
+                position: absolute;
+                left: 75%;
+                bottom: -11%;
+                animation: runP2 2.5s steps(25,end) infinite both;
+                background-position-y: -300% !important;
+            }
+
+            .photo{
+                position: absolute;
+                left: 92%;
+                bottom:0;
+                animation: runP3 2.5s steps(25,end) infinite both;
+                /*background-position-y: -300% !important;*/
+            }
+            .three-tree{
+                position: absolute;
+                left: 46.5%;
+                bottom: 0;
+                animation: runP3 2.5s steps(25,end) infinite both;
+                background-position-y: -100% !important;
+            }
+            .person-finger{
+                position: absolute;
+                left: 60%;
+                bottom: 0;
+                animation: runP3 2.5s steps(25,end) infinite both;
+                background-position-y: -200% !important;
+            }
+            .talk{
+                position: absolute;
+                left: 35%;
+                bottom: 0;
+                animation: runP3 2.5s steps(25,end) infinite both;
+                background-position-y: -300% !important;
+            }
+            .speaker{
+                position: absolute;
+                left: 15.5%;
+                top: 25%;
+                animation: runP3 2.5s steps(25,end) infinite both;
+                background-position-y: -400% !important;
+            }
+            .car-four{
+                position: absolute;
+                left: 24.5%;
+                bottom: 17%;
+                animation: runP3 2.5s steps(25,end) infinite both;
+                background-position-y: -400% !important;
+            }
+            .car-five{
+                position: absolute;
+                left: 1.5%;
+                bottom: 22%;
+                animation: runP3 2.5s steps(25,end) infinite both;
+                background-position-y: -300% !important;
+            }
+            .bird{
+                position: absolute;
+                left: 18.5%;
+                top: 0;
+                animation: runP3 1.5s steps(25,end) infinite both;
+            }
+            .bird-two{
+                position: absolute;
+                right: 18.5%;
+                top: 3%;
+                animation: runP3 1.5s steps(25,end) infinite both;
+                background-position-y: -200% !important;
+            }
+            .sheep{
+                position: absolute;
+                right: 4.5%;
+                bottom: 0;
+                animation: runP3 2s steps(25,end) infinite both;
+                background-position-y: -100% !important;
+            }
+            .car-six{
+                position: absolute;
+                right: 14.5%;
+                bottom: 10%;
+                animation: runP3 2.5s steps(25,end) infinite both;
+                background-position-y: -500% !important;
+            }
+            .train-run{
+                width: 20vh;
+                height: 20vw;
+                background:url("./assets/move/train.png");
+                animation: cloud 2.5s steps(1) 0s infinite both;
+            }
+            .p2-run{
+                width: 15vh;
+                height: 25vw;
+                background-size: 375vh 100vw !important;
+                background: url("assets/move/m2.png");
+            }
+            .p3-run{
+                width: 20vh;
+                height: 25vw;
+                background-size: 500vh 125vw !important;
+                background: url("assets/move/m3.png");
+            }
+            .p4-run{
+                width: 27vh;
+                height: 21vw;
+                background-size: 675vh 147vw !important;
+                background: url("assets/move/m4.png");
+            }
+
         }
 
         @media screen and (orientation: landscape) {
@@ -923,12 +1060,30 @@
                 animation: runP3 2.5s steps(25,end) infinite both;
                 background-position-y: -500% !important;
             }
-        }
-        .train-run{
-            width: 20vw;
-            height: 20vh;
-            background:url("./assets/move/train.png");
-            animation: cloud 2.5s steps(1) 0s infinite both;
+            .p2-run{
+                width: 15vw;
+                height: 25vh;
+                background-size: 375vw 100vh !important;
+                background: url("assets/move/m2.png");
+            }
+            .p3-run{
+                width: 20vw;
+                height: 25vh;
+                background-size: 500vw 125vh !important;
+                background: url("assets/move/m3.png");
+            }
+            .p4-run{
+                width: 27vw;
+                height: 21vh;
+                background-size: 675vw 147vh !important;
+                background: url("assets/move/m4.png");
+            }
+            .train-run{
+                width: 20vw;
+                height: 20vh;
+                background:url("./assets/move/train.png");
+                animation: cloud 2.5s steps(1) 0s infinite both;
+            }
         }
         @keyframes cloud {
             0%{background-position: 0 0;}
@@ -1007,12 +1162,6 @@
                 background-position-x: 0;
             }
         }
-        .p2-run{
-            width: 15vw;
-            height: 25vh;
-            background-size: 375vw 100vh !important;
-            background: url("assets/move/m2.png");
-        }
         @keyframes runP2 {
             to{
                 background-position-x: -2500%;
@@ -1021,12 +1170,6 @@
                 background-position-x: 0;
             }
         }
-        .p3-run{
-            width: 20vw;
-            height: 25vh;
-            background-size: 500vw 125vh !important;
-            background: url("assets/move/m3.png");
-        }
         @keyframes runP3 {
             to{
                 background-position-x: -2500%;
@@ -1034,12 +1177,6 @@
             from{
                 background-position-x: 0;
             }
-        }
-        .p4-run{
-            width: 27vw;
-            height: 21vh;
-            background-size: 675vw 147vh !important;
-            background: url("assets/move/m4.png");
         }
         @keyframes runP4 {
             to{
@@ -1270,6 +1407,8 @@
         ajax.send()
         ajax.onload=()=>{
                 console.log('完成')
+            console.log(JSON.parse(ajax.responseText).rows)
+            urls = JSON.parse(ajax.responseText).rows.map(item=>item.noticeTitle)
         }
     }
     getURLs();
