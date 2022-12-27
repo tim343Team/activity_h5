@@ -111,7 +111,10 @@
 
             .boxItem {
                 height: 100vw;
+                position: relative;
                 display: inline-block;
+                -transform-origin: 0 0;
+                font-size: 30px;
                 outline: none;
             }
 
@@ -502,6 +505,9 @@
             .boxItem {
                 height: 100vh;
                 display: inline-block;
+                position: relative;
+                -transform-origin: 0 0;
+                font-size: 30px;
                 outline: none;
             }
 
@@ -807,95 +813,86 @@
 
             .train{
                 position: absolute;
-                left: 54%;
-                top: 16%;
+                /*transform: scale(0.25);*/
+                background-size: 100vw 100vh !important;
+                left: 60.6%;
+                bottom: 48.333333%;
             }
             .robot{
-                left: 11%;
-                top:35%;
-                transform: scale(0.25);
+                left: 14.5%;
+                top: 48%;
                 position: absolute;
                 animation: runP2 2.5s steps(25,end) infinite both;
                 background-position-y: -100% !important;
             }
             .start{
                 position: absolute;
-                left: 63%;
-                top: -7%;
-                transform: scale(0.25);
+                left: 66%;
+                top: 0;
                 animation: runP2 2.5s steps(25,end) infinite both;
 
             }
             .feng-one{
                 position: absolute;
-                left: 63%;
-                bottom: -27%;
-                transform: scale(1);
+                left: 70%;
+                bottom: -11%;
                 animation: runP2 2.5s steps(25,end) infinite both;
                 background-position-y: -200% !important;
             }
             .feng-two{
                 position: absolute;
-                left: 67%;
-                bottom: -27%;
-                transform: scale(1);
+                left: 75%;
+                bottom: -11%;
                 animation: runP2 2.5s steps(25,end) infinite both;
                 background-position-y: -300% !important;
             }
 
             .photo{
                 position: absolute;
-                left: 90%;
-                bottom: -15%;
-                transform: scale(0.5);
+                left: 92%;
+                bottom:0;
                 animation: runP3 2.5s steps(25,end) infinite both;
                 /*background-position-y: -300% !important;*/
             }
             .three-tree{
                 position: absolute;
-                left: 44.5%;
-                bottom: -15%;
-                transform: scale(0.5);
+                left: 46.5%;
+                bottom: 0;
                 animation: runP3 2.5s steps(25,end) infinite both;
                 background-position-y: -100% !important;
             }
             .person-finger{
                 position: absolute;
                 left: 60%;
-                bottom: -15%;
-                transform: scale(0.5);
+                bottom: 0;
                 animation: runP3 2.5s steps(25,end) infinite both;
                 background-position-y: -200% !important;
             }
             .talk{
                 position: absolute;
-                left: 32%;
-                bottom: -15%;
-                transform: scale(0.75);
+                left: 35%;
+                bottom: 0;
                 animation: runP3 2.5s steps(25,end) infinite both;
                 background-position-y: -300% !important;
             }
             .speaker{
                 position: absolute;
-                left: 13.5%;
-                top: 12%;
-                transform: scale(0.5);
+                left: 15.5%;
+                top: 25%;
                 animation: runP3 2.5s steps(25,end) infinite both;
                 background-position-y: -400% !important;
             }
             .car-four{
                 position: absolute;
-                left: 18.5%;
-                bottom: 14%;
-                transform: scale(0.5);
+                left: 24.5%;
+                bottom: 17%;
                 animation: runP3 2.5s steps(25,end) infinite both;
                 background-position-y: -400% !important;
             }
             .car-five{
                 position: absolute;
-                left: 0.5%;
-                bottom: 17%;
-                transform: scale(0.5);
+                left: 1.5%;
+                bottom: 22%;
                 animation: runP3 2.5s steps(25,end) infinite both;
                 background-position-y: -300% !important;
             }
@@ -903,14 +900,12 @@
                 position: absolute;
                 left: 18.5%;
                 top: 0;
-                transform: scale(0.5);
                 animation: runP3 1.5s steps(25,end) infinite both;
             }
             .bird-two{
                 position: absolute;
                 right: 18.5%;
                 top: 3%;
-                transform: scale(0.5);
                 animation: runP3 1.5s steps(25,end) infinite both;
                 background-position-y: -200% !important;
             }
@@ -918,23 +913,20 @@
                 position: absolute;
                 right: 4.5%;
                 bottom: 0;
-                transform: scale(0.5);
-                animation: runP3 1.5s steps(25,end) infinite both;
+                animation: runP3 2s steps(25,end) infinite both;
                 background-position-y: -100% !important;
             }
             .car-six{
                 position: absolute;
-                right: 10.5%;
-                bottom: 8%;
-                transform: scale(1);
-                animation: runP3 1.5s steps(25,end) infinite both;
+                right: 14.5%;
+                bottom: 10%;
+                animation: runP3 2.5s steps(25,end) infinite both;
                 background-position-y: -500% !important;
             }
         }
         .train-run{
-            width:1300px;
-            height: 400px;
-            transform: scale(0.25);
+            width: 20vw;
+            height: 20vh;
             background:url("./assets/move/train.png");
             animation: cloud 2.5s steps(1) 0s infinite both;
         }
@@ -1016,8 +1008,9 @@
             }
         }
         .p2-run{
-            width: 720px;
-            height: 407.5px;
+            width: 15vw;
+            height: 25vh;
+            background-size: 375vw 100vh !important;
             background: url("assets/move/m2.png");
         }
         @keyframes runP2 {
@@ -1029,8 +1022,9 @@
             }
         }
         .p3-run{
-            width: 600px;
-            height: 360px;
+            width: 20vw;
+            height: 25vh;
+            background-size: 500vw 125vh !important;
             background: url("assets/move/m3.png");
         }
         @keyframes runP3 {
@@ -1042,8 +1036,9 @@
             }
         }
         .p4-run{
-            width: 650px;
-            height: 175px;
+            width: 27vw;
+            height: 21vh;
+            background-size: 675vw 147vh !important;
             background: url("assets/move/m4.png");
         }
         @keyframes runP4 {
@@ -1269,6 +1264,15 @@
         'http://117.71.58.151:10000/personnel',
         'http://117.71.58.151:10000/service'
     ];
+    const getURLs=()=>{
+        let ajax = new XMLHttpRequest();
+        ajax.open('get','http://182.92.118.21/system/notice/list')
+        ajax.send()
+        ajax.onload=()=>{
+                console.log('完成')
+        }
+    }
+    getURLs();
     // let URL= window.URL||window.webkitURL;
     let imgs = [...document.getElementsByTagName('img')].filter(item => item.hasAttribute('data-src'));
     // let audios = [...document.getElementsByTagName('audio')].filter(item=>item.hasAttribute('data-src'));
