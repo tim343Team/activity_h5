@@ -146,51 +146,57 @@
             }
 
 
-            .point {
+            .point  {
                 position: absolute;
-                width: 200px;
-                height: 200px;
+                width: 10vh;
+                height: 15vw;
+                overflow: visible;
                 z-index: 9999;
                 /*background: red;*/
                 display: inline-block;
+                background-size: 40vh 45vw !important;
                 background: url("./assets/move/point.png");
                 animation: point_animate 1s steps(1) 0s infinite both;
+            }
+            .point>img{
+                position: absolute;
+                width: 80%;
+                bottom: 0;
             }
 
             .t1 {
                 left: 27.1%;
-                top: 20.8%;
+                top: 38.8%;
             }
 
             .t2 {
-                right: 19.5%;
-                top: 41.5%;
+                right: 20.5%;
+                top: 59.5%;
             }
 
             .t3 {
-                left: 12%;
-                bottom: 22%;
+                left: 12.7%;
+                bottom: 31%;
             }
 
             .t4 {
-                left: 52%;
-                bottom: 20%;
+                left: 54%;
+                bottom: 32%;
             }
 
             .t5 {
-                left: 22%;
+                left: 21%;
                 top: 21%;
             }
 
             .t6 {
-                left: 65%;
-                top: 33%;
-
+                left: 66%;
+                top: 44%;
             }
 
             .t7 {
-                left: 33%;
-                top: 44%;
+                left: 32%;
+                bottom: 22%
             }
 
             .t8 {
@@ -199,9 +205,10 @@
             }
 
             .t9 {
-                left: 53%;
-                bottom: 17%;
+                left: 53.5%;
+                bottom: 23%;
             }
+
 
             .notice > span {
                 font-size: 5rem;
@@ -305,9 +312,8 @@
                 transform: scale(1.25);
             }
             .cloud-one{
-                width: 626px;
-                height: 345.5px;
-                transform: scale(0.75);
+                width: 60vw;
+                height: 35vw;
                 background: url('./assets/cloud.png');
                 background-position: 0 0;
                 position: absolute;
@@ -315,9 +321,8 @@
                 left: 12%;
             }
             .cloud-two{
-                width: 626px;
-                height: 345.5px;
-                transform: scale(0.75);
+                width: 60vw;
+                height: 35vw;
                 background: url('./assets/cloud.png');
                 background-position: 0 -100%;
                 position: absolute;
@@ -325,9 +330,8 @@
                 left: 41%;
             }
             .cloud-three{
-                width: 626px;
-                height: 345.5px;
-                transform: scale(0.75);
+                width: 60vh;
+                height: 35vh;
                 background: url('./assets/cloud.png');
                 background-position: 0 -200%;
                 position: absolute;
@@ -335,9 +339,8 @@
                 left: -31%;
             }
             .cloud-four{
-                width: 626px;
-                height: 345.5px;
-                transform: scale(0.75);
+                width: 60vh;
+                height: 35vh;
                 background: url('./assets/cloud.png');
                 background-position: 0 -300%;
                 position: absolute;
@@ -345,9 +348,8 @@
                 left: 0%;
             }
             .cloud-five{
-                width: 626px;
-                height: 345.5px;
-                transform: scale(0.75);
+                width: 60vh;
+                height: 35vh;
                 background: url('./assets/cloud.png');
                 background-position: 0 -400%;
                 position: absolute;
@@ -355,9 +357,8 @@
                 left: -20%;
             }
             .cloud-six{
-                width: 626px;
-                height: 345.5px;
-                transform: scale(0.75);
+                width: 60vh;
+                height: 35vh;
                 background: url('./assets/cloud.png');
                 background-position: 0 -500%;
                 position: absolute;
@@ -365,9 +366,8 @@
                 left: 21%;
             }
             .cloud-seven{
-                width: 626px;
-                height: 345.5px;
-                transform: scale(0.75);
+                width: 60vh;
+                height: 35vh;
                 background: url('./assets/cloud.png');
                 background-position: 0 -600%;
                 position: absolute;
@@ -375,9 +375,8 @@
                 left: 21%;
             }
             .cloud-eight{
-                width: 626px;
-                height: 345.5px;
-                transform: scale(0.75);
+                width: 60vh;
+                height: 35vh;
                 background: url('./assets/cloud.png');
                 background-position: 0 -700%;
                 position: absolute;
@@ -385,9 +384,8 @@
                 left: 21%;
             }
             .cloud-nine{
-                width: 626px;
-                height: 345.5px;
-                transform: scale(0.75);
+                width: 60vh;
+                height: 35vh;
                 background: url('./assets/cloud.png');
                 background-position: 0 -800%;
                 position: absolute;
@@ -395,9 +393,8 @@
                 left: 42%;
             }
             .cloud-ten{
-                width: 626px;
-                height: 345.5px;
-                transform: scale(0.75);
+                width: 60vh;
+                height: 35vh;
                 background: url('./assets/cloud.png');
                 background-position: 0 -900%;
                 position: absolute;
@@ -405,9 +402,8 @@
                 left: 42%;
             }
             .cloud-ele{
-                width: 626px;
-                height: 345.5px;
-                transform: scale(0.75);
+                width: 60vh;
+                height: 35vh;
                 background: url('./assets/cloud.png');
                 background-position: 0 -1000%;
                 position: absolute;
@@ -415,9 +411,8 @@
                 left: 42%;
             }
             .cloud-twl{
-                width: 626px;
-                height: 345.5px;
-                transform: scale(0.75);
+                width: 60vh;
+                height: 35vh;
                 background: url('./assets/cloud.png');
                 background-position: 0 -1100%;
                 position: absolute;
@@ -428,7 +423,7 @@
             .train{
                 position: absolute;
                 /*transform: scale(0.25);*/
-                background-size: 100vh 100vw !important;
+                background-size: 160vh 100vw !important;
                 left: 60.6%;
                 bottom: 48.333333%;
             }
@@ -450,6 +445,7 @@
                 position: absolute;
                 left: 70%;
                 bottom: -11%;
+                transform: scale(3);
                 animation: runP2 2.5s steps(25,end) infinite both;
                 background-position-y: -200% !important;
             }
@@ -457,6 +453,7 @@
                 position: absolute;
                 left: 75%;
                 bottom: -11%;
+                transform: scale(3);
                 animation: runP2 2.5s steps(25,end) infinite both;
                 background-position-y: -300% !important;
             }
@@ -472,6 +469,7 @@
                 position: absolute;
                 left: 46.5%;
                 bottom: 0;
+                transform: scale(2);
                 animation: runP3 2.5s steps(25,end) infinite both;
                 background-position-y: -100% !important;
             }
@@ -479,6 +477,7 @@
                 position: absolute;
                 left: 60%;
                 bottom: 0;
+                transform: scale(2);
                 animation: runP3 2.5s steps(25,end) infinite both;
                 background-position-y: -200% !important;
             }
@@ -486,6 +485,7 @@
                 position: absolute;
                 left: 35%;
                 bottom: 0;
+                transform: scale(2.5);
                 animation: runP3 2.5s steps(25,end) infinite both;
                 background-position-y: -300% !important;
             }
@@ -538,10 +538,10 @@
                 background-position-y: -500% !important;
             }
             .train-run{
-                width: 20vh;
+                width: 32vh;
                 height: 20vw;
                 background:url("./assets/move/train.png");
-                animation: cloud 2.5s steps(1) 0s infinite both;
+                animation: cloud 3s steps(1) 0s infinite both;
             }
             .p2-run{
                 width: 15vh;
@@ -677,33 +677,39 @@
 
             .point {
                 position: absolute;
-                width: 200px;
-                height: 200px;
-                transform: scale(0.5);
+                width: 10vw;
+                height: 15vh;
+                overflow: visible;
                 z-index: 9999;
                 /*background: red;*/
                 display: inline-block;
+                background-size: 40vw 45vh !important;
                 background: url("./assets/move/point.png");
                 animation: point_animate 1s steps(1) 0s infinite both;
             }
+            .point>img{
+                position: absolute;
+                width: 80%;
+                bottom: 0;
+            }
             .t1 {
-                left: 22.1%;
-                top: 22.8%;
+                left: 27.1%;
+                top: 38.8%;
             }
 
             .t2 {
-                right: 15.5%;
-                top: 43.5%;
+                right: 20.5%;
+                top: 59.5%;
             }
 
             .t3 {
-                left: 12%;
-                bottom: 22%;
+                left: 12.7%;
+                bottom: 31%;
             }
 
             .t4 {
-                left: 52%;
-                bottom: 20%;
+                left: 54%;
+                bottom: 32%;
             }
 
             .t5 {
@@ -712,8 +718,8 @@
             }
 
             .t6 {
-                left: 64%;
-                top: 30%;
+                left: 66%;
+                top: 44%;
             }
 
             .t7 {
@@ -727,8 +733,8 @@
             }
 
             .t9 {
-                left: 50%;
-                bottom: 20%;
+                left: 53.5%;
+                bottom: 23%;
             }
 
             .notice > span {
@@ -828,9 +834,8 @@
                 background-position-y: -200% !important;
             }
             .cloud-one{
-                width: 626px;
-                height: 345.5px;
-                transform: scale(0.75);
+                width: 60vw;
+                height: 35vw;
                 background: url('./assets/cloud.png');
                 background-position: 0 0;
                 position: absolute;
@@ -838,9 +843,8 @@
                 left: 12%;
             }
             .cloud-two{
-                width: 626px;
-                height: 345.5px;
-                transform: scale(0.75);
+                width: 60vw;
+                height: 35vw;
                 background: url('./assets/cloud.png');
                 background-position: 0 -100%;
                 position: absolute;
@@ -848,9 +852,8 @@
                 left: 41%;
             }
             .cloud-three{
-                width: 626px;
-                height: 345.5px;
-                transform: scale(0.75);
+                width: 60vw;
+                height: 35vw;
                 background: url('./assets/cloud.png');
                 background-position: 0 -200%;
                 position: absolute;
@@ -858,9 +861,8 @@
                 left: -31%;
             }
             .cloud-four{
-                width: 626px;
-                height: 345.5px;
-                transform: scale(0.75);
+                width: 60vw;
+                height: 35vw;
                 background: url('./assets/cloud.png');
                 background-position: 0 -300%;
                 position: absolute;
@@ -868,9 +870,8 @@
                 left: 0%;
             }
             .cloud-five{
-                width: 626px;
-                height: 345.5px;
-                transform: scale(0.75);
+                width: 60vw;
+                height: 35vw;
                 background: url('./assets/cloud.png');
                 background-position: 0 -400%;
                 position: absolute;
@@ -878,9 +879,8 @@
                 left: -20%;
             }
             .cloud-six{
-                width: 626px;
-                height: 345.5px;
-                transform: scale(0.75);
+                width: 60vw;
+                height: 35vw;
                 background: url('./assets/cloud.png');
                 background-position: 0 -500%;
                 position: absolute;
@@ -888,9 +888,8 @@
                 left: 21%;
             }
             .cloud-seven{
-                width: 626px;
-                height: 345.5px;
-                transform: scale(0.75);
+                width: 60vw;
+                height: 35vw;
                 background: url('./assets/cloud.png');
                 background-position: 0 -600%;
                 position: absolute;
@@ -898,9 +897,8 @@
                 left: 21%;
             }
             .cloud-eight{
-                width: 626px;
-                height: 345.5px;
-                transform: scale(0.75);
+                width: 60vw;
+                height: 35vw;
                 background: url('./assets/cloud.png');
                 background-position: 0 -700%;
                 position: absolute;
@@ -908,9 +906,8 @@
                 left: 21%;
             }
             .cloud-nine{
-                width: 626px;
-                height: 345.5px;
-                transform: scale(0.75);
+                width: 60vw;
+                height: 35vw;
                 background: url('./assets/cloud.png');
                 background-position: 0 -800%;
                 position: absolute;
@@ -918,9 +915,8 @@
                 left: 42%;
             }
             .cloud-ten{
-                width: 626px;
-                height: 345.5px;
-                transform: scale(0.75);
+                width: 60vw;
+                height: 35vw;
                 background: url('./assets/cloud.png');
                 background-position: 0 -900%;
                 position: absolute;
@@ -928,9 +924,8 @@
                 left: 42%;
             }
             .cloud-ele{
-                width: 626px;
-                height: 345.5px;
-                transform: scale(0.75);
+                width: 60vw;
+                height: 35vw;
                 background: url('./assets/cloud.png');
                 background-position: 0 -1000%;
                 position: absolute;
@@ -938,9 +933,8 @@
                 left: 42%;
             }
             .cloud-twl{
-                width: 626px;
-                height: 345.5px;
-                transform: scale(0.75);
+                width: 60vw;
+                height: 35vw;
                 background: url('./assets/cloud.png');
                 background-position: 0 -1100%;
                 position: absolute;
@@ -951,7 +945,7 @@
             .train{
                 position: absolute;
                 /*transform: scale(0.25);*/
-                background-size: 100vw 100vh !important;
+                background-size: 160vw 100vh !important;
                 left: 60.6%;
                 bottom: 48.333333%;
             }
@@ -973,6 +967,7 @@
                 position: absolute;
                 left: 70%;
                 bottom: -11%;
+                transform: scale(3);
                 animation: runP2 2.5s steps(25,end) infinite both;
                 background-position-y: -200% !important;
             }
@@ -980,6 +975,7 @@
                 position: absolute;
                 left: 75%;
                 bottom: -11%;
+                transform: scale(3);
                 animation: runP2 2.5s steps(25,end) infinite both;
                 background-position-y: -300% !important;
             }
@@ -995,6 +991,7 @@
                 position: absolute;
                 left: 46.5%;
                 bottom: 0;
+                transform: scale(2);
                 animation: runP3 2.5s steps(25,end) infinite both;
                 background-position-y: -100% !important;
             }
@@ -1002,6 +999,7 @@
                 position: absolute;
                 left: 60%;
                 bottom: 0;
+                transform: scale(2);
                 animation: runP3 2.5s steps(25,end) infinite both;
                 background-position-y: -200% !important;
             }
@@ -1009,6 +1007,7 @@
                 position: absolute;
                 left: 35%;
                 bottom: 0;
+                transform: scale(2.5);
                 animation: runP3 2.5s steps(25,end) infinite both;
                 background-position-y: -300% !important;
             }
@@ -1079,10 +1078,10 @@
                 background: url("assets/move/m4.png");
             }
             .train-run{
-                width: 20vw;
+                width: 32vw;
                 height: 20vh;
                 background:url("./assets/move/train.png");
-                animation: cloud 2.5s steps(1) 0s infinite both;
+                animation: cloud 3s steps(1) 0s infinite both;
             }
         }
         @keyframes cloud {
@@ -1234,7 +1233,7 @@
     <div class="loading" id="loading">
         <div class="relative boxItem">
             <img id="cloud" class="img img-max" data-src="./assets/home-3.jpg"/>
-            <img id="homeR" class="img img-max" style="display: none;position: absolute;left: 0" data-src="./assets/home-r.png"/>
+<!--            <img id="homeR" class="img img-max" style="display: none;position: absolute;left: 0" data-src="./assets/home-r.png"/>-->
             <img id="home" class="img img-max" style="display: none" data-src="./assets/home.jpg"/>
             <div id="open"  class="box-max" >
                 <div class="cloud-one movetop"></div>
@@ -1255,10 +1254,10 @@
 
             </div>
             <div class="point t1" id="goHome" style="display:none;">
-                <img src="" class="width100"/>
+                <img src="./assets/1.png"/>
             </div>
             <div class="point t2" id="goNext" style="display:none;">
-                <img src="" class="width100"/>
+                <img src="./assets/2.png"/>
             </div>
         </div>
 
@@ -1435,7 +1434,7 @@
 
 
     let home = document.getElementById('home');
-    let homeR = document.getElementById('homeR');
+    // let homeR = document.getElementById('homeR');
     let cloud = document.getElementById('cloud')
 
     // let mh1 = document.getElementById('mh1')
@@ -1481,7 +1480,7 @@
             progressBg.setAttribute('style', 'display:none');
             open.setAttribute('style', 'display:inline-block')
             home.setAttribute('style', 'display:inline-block')
-            homeR.setAttribute('style', 'display:inline-block')
+            // homeR.setAttribute('style', 'display:inline-block')
             cloud.setAttribute('style', 'display:none')
             play(audioUrl[0])
             setTimeout(() => {
