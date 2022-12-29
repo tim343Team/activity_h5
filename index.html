@@ -234,21 +234,21 @@
                 position: absolute;
                 left: 7.7%;
                 bottom: 15%;
-                animation: runP1 1.5s steps(25,end) infinite both;
+                animation: run-24 1.5s steps(25,end) forwards;
                 background-position-y: 0;
             }
             .car-two{
                 position: absolute;
                 left: 4.7%;
                 bottom: 0;
-                animation: runP1 2s steps(25,end) infinite both;
+                animation: run-24 2s steps(25,end) forwards;
                 background-position-y: -100% !important;
             }
             .car-three{
                 position: absolute;
                 left: 19%;
                 bottom: 0;
-                animation: runP1 1.5s steps(25,end) infinite both;
+                animation: run-24 1.5s steps(25,end) forwards;
                 background-position-y: -700% !important;
             }
             .swallow{
@@ -529,14 +529,14 @@
                 position: absolute;
                 left: 24.5%;
                 bottom: 17%;
-                animation: runP3 2.5s steps(25,end) infinite both;
+                animation: run-24 2s steps(24,end) forwards;
                 background-position-y: -400% !important;
             }
             .car-five{
                 position: absolute;
                 left: 1.5%;
                 bottom: 22%;
-                animation: runP3 2.5s steps(25,end) infinite both;
+                animation: run-24 2s steps(24,end) forwards;
                 background-position-y: -300% !important;
             }
             .bird{
@@ -556,21 +556,21 @@
                 position: absolute;
                 right: 4.5%;
                 bottom: 0;
-                animation: runP3 2s steps(25,end) infinite both;
+                animation: run-24 2s steps(24,end) forwards;
                 background-position-y: -100% !important;
             }
             .car-six{
                 position: absolute;
                 right: 14.5%;
                 bottom: 10%;
-                animation: runP3 2.5s steps(25,end) infinite both;
+                animation: run-24 2s steps(24,end) forwards;
                 background-position-y: -500% !important;
             }
             .train-run{
                 width: 32vh;
                 height: 20vw;
                 background:url("./assets/move/train.png");
-                animation: cloud 3s steps(1) 0s infinite both;
+                animation: cloud 3s steps(1) 0s 1 forwards;
             }
             .p2-run{
                 width: 15vh;
@@ -786,21 +786,22 @@
                 position: absolute;
                 left: 7.7%;
                 bottom: 15%;
-                animation: runP1 1.5s steps(25,end) infinite both;
-                background-position-y: 0;
+                animation: run-24 1.5s steps(24,end)  forwards;
+                background-position-y: 0 !important;
             }
             .car-two{
                 position: absolute;
                 left: 4.7%;
                 bottom: 0;
-                animation: runP1 2s steps(25,end) infinite both;
+                animation: run-24 2s steps(24,end) forwards;
+                animation-fill-mode:forwards;
                 background-position-y: -100% !important;
             }
             .car-three{
                 position: absolute;
                 left: 19%;
                 bottom: 0;
-                animation: runP1 1.5s steps(25,end) infinite both;
+                animation: run-24 1.5s steps(24,end) forwards;
                 background-position-y: -700% !important;
             }
             .swallow{
@@ -1074,14 +1075,14 @@
                 position: absolute;
                 left: 24.5%;
                 bottom: 17%;
-                animation: runP3 2.5s steps(25,end) infinite both;
+                animation: run-24 2s steps(24,end) forwards;
                 background-position-y: -400% !important;
             }
             .car-five{
                 position: absolute;
                 left: 1.5%;
                 bottom: 22%;
-                animation: runP3 2.5s steps(25,end) infinite both;
+                animation: run-24 2s steps(24,end) forwards;
                 background-position-y: -300% !important;
             }
             .bird{
@@ -1101,14 +1102,14 @@
                 position: absolute;
                 right: 4.5%;
                 bottom: 0;
-                animation: runP3 2s steps(25,end) infinite both;
+                animation: run-24 2s steps(24,end) forwards;
                 background-position-y: -100% !important;
             }
             .car-six{
                 position: absolute;
                 right: 14.5%;
                 bottom: 10%;
-                animation: runP3 2.5s steps(25,end) infinite both;
+                animation: run-24 2s steps(24,end) forwards;
                 background-position-y: -500% !important;
             }
             .p1-run{
@@ -1139,7 +1140,7 @@
                 width: 32vw;
                 height: 20vh;
                 background:url("./assets/move/train.png");
-                animation: cloud 3s steps(1) 0s infinite both;
+                animation: cloud 3s steps(1) 0s 1 forwards;
             }
         }
         @keyframes cloud {
@@ -1216,6 +1217,14 @@
         @keyframes runP1 {
             to{
                 background-position-x: -2500%;
+            }
+            from{
+                background-position-x: 0;
+            }
+        }
+        @keyframes run-24 {
+            to{
+                background-position-x: -2400%;
             }
             from{
                 background-position-x: 0;
@@ -1349,9 +1358,9 @@
             <div class="point t3" id="goBaiDu"></div>
             <div class="point t4" id="goSchool"></div>
             <!--车-->
-            <div class="p1-run car-one"></div>
-            <div class="p1-run car-two"></div>
-            <div class="p1-run car-three"></div>
+            <div class="p1-run car-one" id="car-one"></div>
+            <div class="p1-run car-two" id="car-two"></div>
+            <div class="p1-run car-three" id="car-three"></div>
 <!--            燕子-->
             <div class="p1-run swallow"></div>
             <div class="p1-run swallow-two"></div>
@@ -1373,7 +1382,7 @@
             <div class="point t6" id="goAchievements"></div>
 
 <!--            train-->
-            <div class="train-run train"></div>
+            <div class="train-run train" id="train"></div>
             <div class="p2-run robot"></div>
             <div class="p2-run start"></div>
             <div class="p2-run feng-one"></div>
@@ -1397,12 +1406,12 @@
 <!--            <img class="img img-absolute" data-src="./assets/p4.gif">-->
             <div class="point t9" id="goService"></div>
 
-            <div class="p4-run car-five"></div>
-            <div class="p4-run car-four"></div>
+            <div class="p4-run car-five" id="car-five"></div>
+            <div class="p4-run car-four" id="car-four"></div>
             <div class="p4-run bird"></div>
             <div class="p4-run bird-two"></div>
-            <div class="p4-run car-six"></div>
-            <div class="p4-run sheep"></div>
+            <div class="p4-run car-six" id="car-six"></div>
+            <div class="p4-run sheep" id="sheep"></div>
 
 
         </div>
@@ -1536,6 +1545,17 @@
     // let P34= document.getElementById('p3-4')
     // let P41= document.getElementById('p4-1')
     // let P42= document.getElementById('p4-2')
+
+
+    let train = document.getElementById('train')
+    let sheep = document.getElementById('sheep')
+    let carFive=document.getElementById('car-five')
+    let carFour = document.getElementById('car-four')
+    let carSix = document.getElementById('car-six')
+    let carOne = document.getElementById('car-one');
+    let carTwo = document.getElementById('car-two');
+    let carThree = document.getElementById('car-three');
+
     function checkCount() {
         // progress.innerText='正在加载!!!!'+count+'/'+(imgs.length+audioUrl.length)
         progressNu.innerText = '正在加载...' + (count / (imgs.length + moveUrl.length + audioUrl.length) * 100).toFixed(0) + "%"
@@ -1589,11 +1609,23 @@
         a.setAttribute('style', 'display:none');
         b.setAttribute('style', 'display:inline-block');
     }
+    let showOne = (a) =>{
+        a.setAttribute('style', 'display:inline-block');
+    }
+    let missOne = (a) =>{
+        a.setAttribute('style', 'display:none');
+    }
     //滚动
     box.addEventListener('scroll', (e) => {
         let totalWidth = box.scrollWidth;
         let bl = Math.floor((box.scrollLeft / totalWidth) * 100);
+        console.log(bl)
         switch (bl) {
+            case 0:
+                showOne(carOne);
+                showOne(carTwo);
+                showOne(carThree);
+                break;
             case 2:
                 play(audioUrl[1]);
                 break;
@@ -1603,11 +1635,16 @@
             case 13:
                 play(audioUrl[3]);
                 show(mp1, mp11);
+                missOne(carOne)
+                missOne(carTwo)
+                missOne(carThree)
                 break;
             case 31:
                 play(audioUrl[4]);
                 show(mp2, mp22);
+                train.setAttribute('style','display:none')
                 break;
+            case 42:showOne(train);break;
             case 43:
                 play(audioUrl[5]);
                 show(mp3, mp33);
@@ -1615,17 +1652,25 @@
             case 57:
                 play(audioUrl[6]);
                 show(mp4, mp44);
+                missOne(carFour)
+                missOne(carFive)
+                missOne(carSix)
+                missOne(sheep)
                 break;
             case 70:
                 show(mp5, mp55);
                 break;
             case 83:
                 play(audioUrl[7]);
+                showOne(carFour)
+                showOne(carFive)
                 break;
             case 88:
                 play(audioUrl[8]);
                 show(mp6, mp66);
+                showOne(carSix)
                 break;
+            case 91:showOne(sheep);break;
         }
         if (box.clientWidth + box.scrollLeft + 10 >= box.scrollWidth) {
             // alert('到底了')
