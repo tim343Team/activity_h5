@@ -10,10 +10,8 @@
             margin: 0;
             padding: 0;
             border: 0;
-            overflow-scrolling: touch;
             overflow: hidden;
         }
-
         .rotate90 {
             transform: rotate(90deg);
             transform-origin: 490px;
@@ -26,11 +24,15 @@
             top: 0;
             width: 100vw;
             height: 100vh;
+            overflow-x: auto;
         }
         @media screen and (orientation: portrait) {
             #isRotate {
                 width: 100vh;
                 height: 100vw;
+                overflow-y:auto ;
+                overflow-scrolling: touch;
+                touch-action: auto;
             }
 
             .box {
@@ -54,8 +56,8 @@
                 height: 100vw;
                 width: 100vh;
                 position: relative;
-                overflow-x: hidden;
-                overflow-y: auto;
+                /*overflow-x: hidden;*/
+                overflow: auto;
             }
 
             .m-img-box {
@@ -90,13 +92,12 @@
             .m-progress-bg {
                 z-index: 999;
                 position: fixed;
-                top: 0;
-                bottom: 0;
+                top: 50%;
                 left: 0;
                 right: 0;
                 margin: 0 auto;
-                width: 50vh;
-                height: 10vh;
+                width: 50vw;
+                height: 10vw;
                 text-align: center;
                 background: rgba(0, 0, 0, 0.2);
                 color: white;
@@ -184,8 +185,8 @@
             }
 
             .t4 {
-                left: 54%;
-                bottom: 32%;
+                left: 52%;
+                bottom: 36%;
             }
 
             .t5 {
@@ -613,8 +614,7 @@
                 height: 100vh;
                 width: 100vw;
                 position: relative;
-                overflow-y: hidden;
-                overflow-x: auto;
+                overflow: auto;
             }
 
             .m-img-box {
@@ -740,8 +740,8 @@
             }
 
             .t4 {
-                left: 54%;
-                bottom: 32%;
+                left: 52%;
+                bottom: 36%;
             }
 
             .t5 {
@@ -1175,7 +1175,7 @@
                 transform: scale(1);
             }
             to{
-                transform: scale(1.15);
+                transform: scale(1.07);
             }
         }
         @keyframes point_animate{
@@ -1631,7 +1631,8 @@
             // alert('到底了')
         }
     })
-    document.body.addEventListener('touchmove', (e) => {
+    box.addEventListener('touchmove', (e) => {
+        e.stopPropagation()
         let totalWidth = box.scrollWidth;
         let bl = Math.floor((box.scrollLeft / totalWidth) * 100);
         switch (bl) {
